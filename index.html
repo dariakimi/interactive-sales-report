@@ -594,12 +594,12 @@ function renderWhy(main){
  <div class="panel"><h3>Customer satisfaction rate</h3><p class="sub">Share of surveyed customers who rated their order satisfied. Tracked monthly; the quarterly average is the figure to judge.</p><div class="chart" id="w1"></div>
  <div class="legend"><span><span class="sw-line" style="border-top-color:var(--s1)"></span>Monthly</span><span><span class="sw-line" style="border-top-color:var(--s2)"></span>Quarter to date average</span></div></div>
  <div class="seg" id="pm" style="margin-top:16px"><button type="button" data-p="n" aria-pressed="${st.pmode==='n'}">By number of quotes</button><button type="button" data-p="v" aria-pressed="${st.pmode==='v'}">By value</button></div>
- <div class="cols" style="margin-top:0"><div class="panel" style="margin-top:0"><h3>Reasons for lost quotes</h3><p class="sub">${esc(monthLong(s-2))} to ${esc(monthLong(s))}. Sorted largest first, with the cumulative share.</p><div class="chart" id="w2"></div></div>
- <div class="panel" style="margin-top:0"><h3>Reasons for won deals</h3><p class="sub">${esc(monthLong(s-2))} to ${esc(monthLong(s))}. Sorted largest first, with the cumulative share.</p><div class="chart" id="w3"></div></div></div>
+ <div class="cols" style="margin-top:0"><div class="panel" style="margin-top:0"><h3>Reasons for lost quotes</h3><p class="sub">${esc(monthLong(s-2))} to ${esc(monthLong(s))}. Sorted largest first, with each reason's share of the total.</p><div class="chart" id="w2"></div></div>
+ <div class="panel" style="margin-top:0"><h3>Reasons for won deals</h3><p class="sub">${esc(monthLong(s-2))} to ${esc(monthLong(s))}. Sorted largest first, with each reason's share of the total.</p><div class="chart" id="w3"></div></div></div>
  <div class="panel"><h3>Cause of delay for aging open quotes</h3><p class="sub">Share of the days that open quotes past their validity date had been waiting at the end of ${esc(monthLong(s))}. Customer delays sit apart from delays inside the company.</p><div class="chart" id="w4"></div></div>`);
  $('pm').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{st.pmode=b.dataset.p;render();}));
- const par=(o)=>{const k=st.pmode; const rows=Object.entries(o).map(([l,x])=>({label:l,value:x[k],n:x.n,v:x.v})).sort((a,b)=>b.value-a.value); const tot=rows.reduce((a,b)=>a+b.value,0); let c=0;
-  rows.forEach(r=>{c+=r.value; const cum=Math.round(c/tot*100); r.note='cum. '+cum+'%'; r.tip=t=>{tipRow(t,'Quotes',F.int(r.n));tipRow(t,'Value',F.usd(r.v));tipRow(t,'Cumulative share',cum+'%');};}); return rows;};
+ const par=(o)=>{const k=st.pmode; const rows=Object.entries(o).map(([l,x])=>({label:l,value:x[k],n:x.n,v:x.v})).sort((a,b)=>b.value-a.value); const tot=rows.reduce((a,b)=>a+b.value,0); 
+  rows.forEach(r=>{const sh=Math.round(r.value/tot*100)+'%'; r.note=sh; r.tip=t=>{tipRow(t,'Quotes',F.int(r.n));tipRow(t,'Value',F.usd(r.v));tipRow(t,'Share of total',sh);};}); return rows;};
  const fmtP=st.pmode==='n'?F.int:F.usd, axP=st.pmode==='n'?F.daysAx:F.usdAx;
  const draws=[()=>trend($('w1'),{labels:ms13.map(m=>monthLabel(m,1)),full:ms13.map(m=>monthLong(m)),fmt:F.pct,ax:F.pctAx,h:220,series:[{name:'Monthly',vals:csat,cls:'ln1',color:'--s1',endDot:'dot1'},{name:'Quarter to date average',vals:qavg,cls:'ln2',color:'--s2'}],
    extra:(t,i)=>tipRow(t,'Survey responses',F.int(S.csR[ms13[i]]))}),
