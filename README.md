@@ -2,7 +2,7 @@
 
 Monthly sales dashboard for Hartwell Flow Systems, a fictional pump and valve manufacturer.
 
-Live site: https://interactive-sales-report.netlify.app
+Live site: https://dariakimi.github.io/interactive-sales-report/
 
 ## Data
 
@@ -21,7 +21,7 @@ To change what the dashboard shows, edit or replace these files and keep the col
 
 ## Updating the site
 
-Commit and push to `main`. Netlify publishes every push to `main`.
+Commit and push to `main`. GitHub Pages publishes every push to `main` within a minute or two.
 
 ## Preview locally
 
