@@ -1,0 +1,1249 @@
+month,sales_rep,product_category,revenue_target,revenue_forecast
+2023-07,Anna Kowalski,Centrifugal pumps,0,0
+2023-07,Anna Kowalski,Valves,0,0
+2023-07,Anna Kowalski,Control systems,0,0
+2023-07,Anna Kowalski,Spare parts,0,0
+2023-07,Ben Ortiz,Centrifugal pumps,0,0
+2023-07,Ben Ortiz,Valves,0,0
+2023-07,Ben Ortiz,Control systems,0,0
+2023-07,Ben Ortiz,Spare parts,0,0
+2023-07,Carla Mensah,Centrifugal pumps,0,0
+2023-07,Carla Mensah,Valves,0,0
+2023-07,Carla Mensah,Control systems,0,0
+2023-07,Carla Mensah,Spare parts,0,0
+2023-07,David Reyes,Centrifugal pumps,0,0
+2023-07,David Reyes,Valves,0,0
+2023-07,David Reyes,Control systems,0,0
+2023-07,David Reyes,Spare parts,0,4043
+2023-07,Elena Petrova,Centrifugal pumps,0,0
+2023-07,Elena Petrova,Valves,0,0
+2023-07,Elena Petrova,Control systems,0,0
+2023-07,Elena Petrova,Spare parts,0,0
+2023-07,Farid Haddad,Centrifugal pumps,0,0
+2023-07,Farid Haddad,Valves,0,0
+2023-07,Farid Haddad,Control systems,0,0
+2023-07,Farid Haddad,Spare parts,0,0
+2023-07,Grace Lindqvist,Centrifugal pumps,0,0
+2023-07,Grace Lindqvist,Valves,0,0
+2023-07,Grace Lindqvist,Control systems,0,0
+2023-07,Grace Lindqvist,Spare parts,0,4222
+2023-07,Hiro Tanaka,Centrifugal pumps,0,0
+2023-07,Hiro Tanaka,Valves,0,0
+2023-07,Hiro Tanaka,Control systems,0,0
+2023-07,Hiro Tanaka,Spare parts,0,0
+2023-08,Anna Kowalski,Centrifugal pumps,0,11207
+2023-08,Anna Kowalski,Valves,0,6847
+2023-08,Anna Kowalski,Control systems,0,0
+2023-08,Anna Kowalski,Spare parts,0,5180
+2023-08,Ben Ortiz,Centrifugal pumps,0,58669
+2023-08,Ben Ortiz,Valves,0,0
+2023-08,Ben Ortiz,Control systems,0,26403
+2023-08,Ben Ortiz,Spare parts,0,0
+2023-08,Carla Mensah,Centrifugal pumps,0,0
+2023-08,Carla Mensah,Valves,0,0
+2023-08,Carla Mensah,Control systems,0,0
+2023-08,Carla Mensah,Spare parts,0,4084
+2023-08,David Reyes,Centrifugal pumps,0,71950
+2023-08,David Reyes,Valves,0,0
+2023-08,David Reyes,Control systems,0,0
+2023-08,David Reyes,Spare parts,0,0
+2023-08,Elena Petrova,Centrifugal pumps,0,0
+2023-08,Elena Petrova,Valves,0,24467
+2023-08,Elena Petrova,Control systems,0,0
+2023-08,Elena Petrova,Spare parts,0,10065
+2023-08,Farid Haddad,Centrifugal pumps,0,19303
+2023-08,Farid Haddad,Valves,0,26106
+2023-08,Farid Haddad,Control systems,0,0
+2023-08,Farid Haddad,Spare parts,0,4490
+2023-08,Grace Lindqvist,Centrifugal pumps,0,16872
+2023-08,Grace Lindqvist,Valves,0,33023
+2023-08,Grace Lindqvist,Control systems,0,21222
+2023-08,Grace Lindqvist,Spare parts,0,2978
+2023-08,Hiro Tanaka,Centrifugal pumps,0,30500
+2023-08,Hiro Tanaka,Valves,0,10322
+2023-08,Hiro Tanaka,Control systems,0,0
+2023-08,Hiro Tanaka,Spare parts,0,3521
+2023-09,Anna Kowalski,Centrifugal pumps,152380,115231
+2023-09,Anna Kowalski,Valves,23400,30150
+2023-09,Anna Kowalski,Control systems,0,0
+2023-09,Anna Kowalski,Spare parts,7150,6104
+2023-09,Ben Ortiz,Centrifugal pumps,122970,83336
+2023-09,Ben Ortiz,Valves,33430,12446
+2023-09,Ben Ortiz,Control systems,0,137535
+2023-09,Ben Ortiz,Spare parts,1350,5272
+2023-09,Carla Mensah,Centrifugal pumps,210190,83822
+2023-09,Carla Mensah,Valves,56990,23192
+2023-09,Carla Mensah,Control systems,134990,32170
+2023-09,Carla Mensah,Spare parts,5690,6545
+2023-09,David Reyes,Centrifugal pumps,57910,48616
+2023-09,David Reyes,Valves,34800,0
+2023-09,David Reyes,Control systems,107290,0
+2023-09,David Reyes,Spare parts,1680,943
+2023-09,Elena Petrova,Centrifugal pumps,267080,136113
+2023-09,Elena Petrova,Valves,75430,66841
+2023-09,Elena Petrova,Control systems,60960,123474
+2023-09,Elena Petrova,Spare parts,13400,1526
+2023-09,Farid Haddad,Centrifugal pumps,73960,136730
+2023-09,Farid Haddad,Valves,39440,40563
+2023-09,Farid Haddad,Control systems,150640,31746
+2023-09,Farid Haddad,Spare parts,10330,9919
+2023-09,Grace Lindqvist,Centrifugal pumps,268930,231404
+2023-09,Grace Lindqvist,Valves,54350,39118
+2023-09,Grace Lindqvist,Control systems,236500,0
+2023-09,Grace Lindqvist,Spare parts,10120,10037
+2023-09,Hiro Tanaka,Centrifugal pumps,18950,0
+2023-09,Hiro Tanaka,Valves,39200,38372
+2023-09,Hiro Tanaka,Control systems,111100,0
+2023-09,Hiro Tanaka,Spare parts,0,6988
+2023-10,Anna Kowalski,Centrifugal pumps,129970,157045
+2023-10,Anna Kowalski,Valves,38030,23224
+2023-10,Anna Kowalski,Control systems,17565,0
+2023-10,Anna Kowalski,Spare parts,7820,6619
+2023-10,Ben Ortiz,Centrifugal pumps,61485,122690
+2023-10,Ben Ortiz,Valves,31240,38663
+2023-10,Ben Ortiz,Control systems,31800,0
+2023-10,Ben Ortiz,Spare parts,1380,1514
+2023-10,Carla Mensah,Centrifugal pumps,113035,232317
+2023-10,Carla Mensah,Valves,54685,60415
+2023-10,Carla Mensah,Control systems,120650,129774
+2023-10,Carla Mensah,Spare parts,5410,5342
+2023-10,David Reyes,Centrifugal pumps,62065,57585
+2023-10,David Reyes,Valves,25685,37837
+2023-10,David Reyes,Control systems,64745,110041
+2023-10,David Reyes,Spare parts,1515,1750
+2023-10,Elena Petrova,Centrifugal pumps,170295,293031
+2023-10,Elena Petrova,Valves,70285,81126
+2023-10,Elena Petrova,Control systems,181790,64064
+2023-10,Elena Petrova,Spare parts,16180,13578
+2023-10,Farid Haddad,Centrifugal pumps,130350,77621
+2023-10,Farid Haddad,Valves,43850,41597
+2023-10,Farid Haddad,Control systems,120525,175231
+2023-10,Farid Haddad,Spare parts,10880,9437
+2023-10,Grace Lindqvist,Centrifugal pumps,200745,299312
+2023-10,Grace Lindqvist,Valves,59425,59354
+2023-10,Grace Lindqvist,Control systems,253535,246102
+2023-10,Grace Lindqvist,Spare parts,11650,10109
+2023-10,Hiro Tanaka,Centrifugal pumps,134075,19832
+2023-10,Hiro Tanaka,Valves,40105,42249
+2023-10,Hiro Tanaka,Control systems,130990,119907
+2023-10,Hiro Tanaka,Spare parts,1110,0
+2023-11,Anna Kowalski,Centrifugal pumps,137263,103073
+2023-11,Anna Kowalski,Valves,34500,57312
+2023-11,Anna Kowalski,Control systems,11710,37055
+2023-11,Anna Kowalski,Spare parts,5443,7963
+2023-11,Ben Ortiz,Centrifugal pumps,79930,0
+2023-11,Ben Ortiz,Valves,25667,30034
+2023-11,Ben Ortiz,Control systems,33223,67849
+2023-11,Ben Ortiz,Spare parts,1667,1489
+2023-11,Carla Mensah,Centrifugal pumps,103083,16361
+2023-11,Carla Mensah,Valves,54460,54136
+2023-11,Carla Mensah,Control systems,136947,106285
+2023-11,Carla Mensah,Spare parts,6297,5584
+2023-11,David Reyes,Centrifugal pumps,71523,66697
+2023-11,David Reyes,Valves,18677,15658
+2023-11,David Reyes,Control systems,55553,22997
+2023-11,David Reyes,Spare parts,1580,1345
+2023-11,Elena Petrova,Centrifugal pumps,180750,70219
+2023-11,Elena Petrova,Valves,58283,69713
+2023-11,Elena Petrova,Control systems,170307,288178
+2023-11,Elena Petrova,Spare parts,12820,19677
+2023-11,Farid Haddad,Centrifugal pumps,130680,184869
+2023-11,Farid Haddad,Valves,40093,46103
+2023-11,Farid Haddad,Control systems,90057,87340
+2023-11,Farid Haddad,Spare parts,10940,12117
+2023-11,Grace Lindqvist,Centrifugal pumps,198977,138191
+2023-11,Grace Lindqvist,Valves,52053,67501
+2023-11,Grace Lindqvist,Control systems,194020,259838
+2023-11,Grace Lindqvist,Spare parts,11650,12002
+2023-11,Hiro Tanaka,Centrifugal pumps,134423,261911
+2023-11,Hiro Tanaka,Valves,34200,39897
+2023-11,Hiro Tanaka,Control systems,123670,152463
+2023-11,Hiro Tanaka,Spare parts,4607,2290
+2023-12,Anna Kowalski,Centrifugal pumps,108810,156194
+2023-12,Anna Kowalski,Valves,54530,25813
+2023-12,Anna Kowalski,Control systems,21600,0
+2023-12,Anna Kowalski,Spare parts,5213,735
+2023-12,Ben Ortiz,Centrifugal pumps,62787,121300
+2023-12,Ben Ortiz,Valves,21377,15068
+2023-12,Ben Ortiz,Control systems,80410,36511
+2023-12,Ben Ortiz,Spare parts,1380,2439
+2023-12,Carla Mensah,Centrifugal pumps,53747,91223
+2023-12,Carla Mensah,Valves,41803,62401
+2023-12,Carla Mensah,Control systems,110233,185861
+2023-12,Carla Mensah,Spare parts,4400,8088
+2023-12,David Reyes,Centrifugal pumps,52220,95750
+2023-12,David Reyes,Valves,8153,5064
+2023-12,David Reyes,Control systems,38187,35475
+2023-12,David Reyes,Spare parts,1193,1913
+2023-12,Elena Petrova,Centrifugal pumps,156587,212192
+2023-12,Elena Petrova,Valves,56767,34884
+2023-12,Elena Petrova,Control systems,194063,160453
+2023-12,Elena Petrova,Spare parts,10663,6658
+2023-12,Farid Haddad,Centrifugal pumps,129637,125458
+2023-12,Farid Haddad,Valves,46457,33066
+2023-12,Farid Haddad,Control systems,67790,30897
+2023-12,Farid Haddad,Spare parts,10290,9612
+2023-12,Grace Lindqvist,Centrifugal pumps,143490,196695
+2023-12,Grace Lindqvist,Valves,47603,36889
+2023-12,Grace Lindqvist,Control systems,205623,79712
+2023-12,Grace Lindqvist,Spare parts,11330,11823
+2023-12,Hiro Tanaka,Centrifugal pumps,176967,141043
+2023-12,Hiro Tanaka,Valves,29287,23026
+2023-12,Hiro Tanaka,Control systems,117310,106146
+2023-12,Hiro Tanaka,Spare parts,7167,12042
+2024-01,Anna Kowalski,Centrifugal pumps,116140,74310
+2024-01,Anna Kowalski,Valves,51037,88341
+2024-01,Anna Kowalski,Control systems,39633,30552
+2024-01,Anna Kowalski,Spare parts,5517,7137
+2024-01,Ben Ortiz,Centrifugal pumps,78373,77120
+2024-01,Ben Ortiz,Valves,15433,21282
+2024-01,Ben Ortiz,Control systems,71077,138213
+2024-01,Ben Ortiz,Spare parts,910,531
+2024-01,Carla Mensah,Centrifugal pumps,54937,65820
+2024-01,Carla Mensah,Valves,32650,18610
+2024-01,Carla Mensah,Control systems,104773,55470
+2024-01,Carla Mensah,Spare parts,3337,0
+2024-01,David Reyes,Centrifugal pumps,43747,0
+2024-01,David Reyes,Valves,11287,3460
+2024-01,David Reyes,Control systems,47160,55854
+2024-01,David Reyes,Spare parts,1790,520
+2024-01,Elena Petrova,Centrifugal pumps,166027,201923
+2024-01,Elena Petrova,Valves,47863,72399
+2024-01,Elena Petrova,Control systems,118513,140024
+2024-01,Elena Petrova,Spare parts,5520,6956
+2024-01,Farid Haddad,Centrifugal pumps,87277,74827
+2024-01,Farid Haddad,Valves,44333,62488
+2024-01,Farid Haddad,Control systems,83813,87373
+2024-01,Farid Haddad,Spare parts,11247,8546
+2024-01,Grace Lindqvist,Centrifugal pumps,99303,105362
+2024-01,Grace Lindqvist,Valves,34390,44863
+2024-01,Grace Lindqvist,Control systems,154753,304650
+2024-01,Grace Lindqvist,Spare parts,13253,9633
+2024-01,Hiro Tanaka,Centrifugal pumps,104177,163821
+2024-01,Hiro Tanaka,Valves,28990,24977
+2024-01,Hiro Tanaka,Control systems,67017,100080
+2024-01,Hiro Tanaka,Spare parts,7157,7972
+2024-02,Anna Kowalski,Centrifugal pumps,84743,141064
+2024-02,Anna Kowalski,Valves,55220,44731
+2024-02,Anna Kowalski,Control systems,95077,96671
+2024-02,Anna Kowalski,Spare parts,6787,9990
+2024-02,Ben Ortiz,Centrifugal pumps,69257,49787
+2024-02,Ben Ortiz,Valves,21907,13436
+2024-02,Ben Ortiz,Control systems,59053,36763
+2024-02,Ben Ortiz,Spare parts,2337,0
+2024-02,Carla Mensah,Centrifugal pumps,73573,20368
+2024-02,Carla Mensah,Valves,34740,25167
+2024-02,Carla Mensah,Control systems,86450,100662
+2024-02,Carla Mensah,Spare parts,1507,2027
+2024-02,David Reyes,Centrifugal pumps,33277,43981
+2024-02,David Reyes,Valves,15497,27370
+2024-02,David Reyes,Control systems,34770,55687
+2024-02,David Reyes,Spare parts,2900,3441
+2024-02,Elena Petrova,Centrifugal pumps,115617,115917
+2024-02,Elena Petrova,Valves,67730,39059
+2024-02,Elena Petrova,Control systems,103543,79807
+2024-02,Elena Petrova,Spare parts,6240,3670
+2024-02,Farid Haddad,Centrifugal pumps,129053,68828
+2024-02,Farid Haddad,Valves,41680,44938
+2024-02,Farid Haddad,Control systems,74107,148420
+2024-02,Farid Haddad,Spare parts,13033,15604
+2024-02,Grace Lindqvist,Centrifugal pumps,88823,0
+2024-02,Grace Lindqvist,Valves,29917,26594
+2024-02,Grace Lindqvist,Control systems,215553,138018
+2024-02,Grace Lindqvist,Spare parts,13990,19880
+2024-02,Hiro Tanaka,Centrifugal pumps,66407,34553
+2024-02,Hiro Tanaka,Valves,32310,45801
+2024-02,Hiro Tanaka,Control systems,67450,0
+2024-02,Hiro Tanaka,Spare parts,4527,2351
+2024-03,Anna Kowalski,Centrifugal pumps,83613,54632
+2024-03,Anna Kowalski,Valves,45953,43933
+2024-03,Anna Kowalski,Control systems,139757,173815
+2024-03,Anna Kowalski,Spare parts,7123,5114
+2024-03,Ben Ortiz,Centrifugal pumps,67033,93261
+2024-03,Ben Ortiz,Valves,18813,33630
+2024-03,Ben Ortiz,Control systems,45677,0
+2024-03,Ben Ortiz,Spare parts,2790,6663
+2024-03,Carla Mensah,Centrifugal pumps,79617,159978
+2024-03,Carla Mensah,Valves,42623,61478
+2024-03,Carla Mensah,Control systems,91630,116951
+2024-03,Carla Mensah,Spare parts,2307,2679
+2024-03,David Reyes,Centrifugal pumps,48990,61146
+2024-03,David Reyes,Valves,17403,18912
+2024-03,David Reyes,Control systems,27887,0
+2024-03,David Reyes,Spare parts,3043,5730
+2024-03,Elena Petrova,Centrifugal pumps,70700,50891
+2024-03,Elena Petrova,Valves,72893,107111
+2024-03,Elena Petrova,Control systems,87693,99680
+2024-03,Elena Petrova,Spare parts,10627,8031
+2024-03,Farid Haddad,Centrifugal pumps,162623,265600
+2024-03,Farid Haddad,Valves,42500,25239
+2024-03,Farid Haddad,Control systems,92170,0
+2024-03,Farid Haddad,Spare parts,14570,18440
+2024-03,Grace Lindqvist,Centrifugal pumps,114777,176042
+2024-03,Grace Lindqvist,Valves,31967,25777
+2024-03,Grace Lindqvist,Control systems,232090,252945
+2024-03,Grace Lindqvist,Spare parts,14283,14775
+2024-03,Hiro Tanaka,Centrifugal pumps,50057,21636
+2024-03,Hiro Tanaka,Valves,42083,35185
+2024-03,Hiro Tanaka,Control systems,83887,109431
+2024-03,Hiro Tanaka,Spare parts,3897,3791
+2024-04,Anna Kowalski,Centrifugal pumps,72543,60265
+2024-04,Anna Kowalski,Valves,45843,54177
+2024-04,Anna Kowalski,Control systems,121007,160466
+2024-04,Anna Kowalski,Spare parts,5260,7199
+2024-04,Ben Ortiz,Centrifugal pumps,58540,64241
+2024-04,Ben Ortiz,Valves,23330,11239
+2024-04,Ben Ortiz,Control systems,49993,108685
+2024-04,Ben Ortiz,Spare parts,3360,1906
+2024-04,Carla Mensah,Centrifugal pumps,145433,80572
+2024-04,Carla Mensah,Valves,38490,43143
+2024-04,Carla Mensah,Control systems,113717,68693
+2024-04,Carla Mensah,Spare parts,4047,2478
+2024-04,David Reyes,Centrifugal pumps,46717,47037
+2024-04,David Reyes,Valves,11813,9429
+2024-04,David Reyes,Control systems,47467,35722
+2024-04,David Reyes,Spare parts,2707,908
+2024-04,Elena Petrova,Centrifugal pumps,78940,53719
+2024-04,Elena Petrova,Valves,77717,81835
+2024-04,Elena Petrova,Control systems,140777,86079
+2024-04,Elena Petrova,Spare parts,11583,20013
+2024-04,Farid Haddad,Centrifugal pumps,173963,164805
+2024-04,Farid Haddad,Valves,55117,56326
+2024-04,Farid Haddad,Control systems,58100,122641
+2024-04,Farid Haddad,Spare parts,11047,13057
+2024-04,Grace Lindqvist,Centrifugal pumps,142890,191293
+2024-04,Grace Lindqvist,Valves,36093,46000
+2024-04,Grace Lindqvist,Control systems,219260,317603
+2024-04,Grace Lindqvist,Spare parts,15897,10385
+2024-04,Hiro Tanaka,Centrifugal pumps,66793,98879
+2024-04,Hiro Tanaka,Valves,50267,49260
+2024-04,Hiro Tanaka,Control systems,101983,138336
+2024-04,Hiro Tanaka,Spare parts,5620,6440
+2024-05,Anna Kowalski,Centrifugal pumps,88727,101721
+2024-05,Anna Kowalski,Valves,48223,39515
+2024-05,Anna Kowalski,Control systems,73727,34229
+2024-05,Anna Kowalski,Spare parts,6527,4049
+2024-05,Ben Ortiz,Centrifugal pumps,43487,20936
+2024-05,Ben Ortiz,Valves,13230,27113
+2024-05,Ben Ortiz,Control systems,68640,52918
+2024-05,Ben Ortiz,Spare parts,1817,1837
+2024-05,Carla Mensah,Centrifugal pumps,131510,239688
+2024-05,Carla Mensah,Valves,41370,12857
+2024-05,Carla Mensah,Control systems,128757,160160
+2024-05,Carla Mensah,Spare parts,7670,7896
+2024-05,David Reyes,Centrifugal pumps,27040,33871
+2024-05,David Reyes,Valves,18567,10530
+2024-05,David Reyes,Control systems,73163,114071
+2024-05,David Reyes,Spare parts,4470,2254
+2024-05,Elena Petrova,Centrifugal pumps,126353,137464
+2024-05,Elena Petrova,Valves,60227,54919
+2024-05,Elena Petrova,Control systems,137777,255531
+2024-05,Elena Petrova,Spare parts,13053,6766
+2024-05,Farid Haddad,Centrifugal pumps,147880,100068
+2024-05,Farid Haddad,Valves,74320,84069
+2024-05,Farid Haddad,Control systems,120603,38407
+2024-05,Farid Haddad,Spare parts,6760,3802
+2024-05,Grace Lindqvist,Centrifugal pumps,120387,85850
+2024-05,Grace Lindqvist,Valves,43757,38304
+2024-05,Grace Lindqvist,Control systems,197927,87634
+2024-05,Grace Lindqvist,Spare parts,15100,25732
+2024-05,Hiro Tanaka,Centrifugal pumps,72077,86371
+2024-05,Hiro Tanaka,Valves,45320,65507
+2024-05,Hiro Tanaka,Control systems,78173,55100
+2024-05,Hiro Tanaka,Spare parts,7533,7400
+2024-06,Anna Kowalski,Centrifugal pumps,100570,116152
+2024-06,Anna Kowalski,Valves,35923,47935
+2024-06,Anna Kowalski,Control systems,76083,27794
+2024-06,Anna Kowalski,Spare parts,5347,9111
+2024-06,Ben Ortiz,Centrifugal pumps,30907,47754
+2024-06,Ben Ortiz,Valves,15883,4010
+2024-06,Ben Ortiz,Control systems,46197,65121
+2024-06,Ben Ortiz,Spare parts,1557,1939
+2024-06,Carla Mensah,Centrifugal pumps,146010,83719
+2024-06,Carla Mensah,Valves,35437,71836
+2024-06,Carla Mensah,Control systems,112967,173758
+2024-06,Carla Mensah,Spare parts,7797,14420
+2024-06,David Reyes,Centrifugal pumps,40930,0
+2024-06,David Reyes,Valves,26330,37656
+2024-06,David Reyes,Control systems,61650,81186
+2024-06,David Reyes,Spare parts,5190,10863
+2024-06,Elena Petrova,Centrifugal pumps,149617,203832
+2024-06,Elena Petrova,Valves,49897,44517
+2024-06,Elena Petrova,Control systems,137407,95183
+2024-06,Elena Petrova,Spare parts,13587,13340
+2024-06,Farid Haddad,Centrifugal pumps,132777,174073
+2024-06,Farid Haddad,Valves,68480,89936
+2024-06,Farid Haddad,Control systems,113540,188765
+2024-06,Farid Haddad,Spare parts,5910,3604
+2024-06,Grace Lindqvist,Centrifugal pumps,73143,103504
+2024-06,Grace Lindqvist,Valves,49093,49537
+2024-06,Grace Lindqvist,Control systems,251290,195998
+2024-06,Grace Lindqvist,Spare parts,14497,11105
+2024-06,Hiro Tanaka,Centrifugal pumps,86030,41732
+2024-06,Hiro Tanaka,Valves,51367,19591
+2024-06,Hiro Tanaka,Control systems,56047,40952
+2024-06,Hiro Tanaka,Spare parts,8730,8994
+2024-07,Anna Kowalski,Centrifugal pumps,103570,95136
+2024-07,Anna Kowalski,Valves,28073,18481
+2024-07,Anna Kowalski,Control systems,74540,168474
+2024-07,Anna Kowalski,Spare parts,5257,4081
+2024-07,Ben Ortiz,Centrifugal pumps,33493,28473
+2024-07,Ben Ortiz,Valves,7627,19488
+2024-07,Ben Ortiz,Control systems,39267,34298
+2024-07,Ben Ortiz,Spare parts,2027,1190
+2024-07,Carla Mensah,Centrifugal pumps,116040,120886
+2024-07,Carla Mensah,Valves,46217,25121
+2024-07,Carla Mensah,Control systems,96303,22182
+2024-07,Carla Mensah,Spare parts,7230,2905
+2024-07,David Reyes,Centrifugal pumps,56527,89754
+2024-07,David Reyes,Valves,31823,33458
+2024-07,David Reyes,Control systems,25697,0
+2024-07,David Reyes,Spare parts,6250,2983
+2024-07,Elena Petrova,Centrifugal pumps,141040,139579
+2024-07,Elena Petrova,Valves,41107,58844
+2024-07,Elena Petrova,Control systems,122670,84202
+2024-07,Elena Petrova,Spare parts,14947,22581
+2024-07,Farid Haddad,Centrifugal pumps,155820,142954
+2024-07,Farid Haddad,Valves,55373,45334
+2024-07,Farid Haddad,Control systems,170073,121375
+2024-07,Farid Haddad,Spare parts,8423,11044
+2024-07,Grace Lindqvist,Centrifugal pumps,67493,38777
+2024-07,Grace Lindqvist,Valves,47953,63425
+2024-07,Grace Lindqvist,Control systems,224800,502100
+2024-07,Grace Lindqvist,Spare parts,8773,8453
+2024-07,Hiro Tanaka,Centrifugal pumps,66677,141832
+2024-07,Hiro Tanaka,Valves,38327,71587
+2024-07,Hiro Tanaka,Control systems,57853,78703
+2024-07,Hiro Tanaka,Spare parts,7107,9802
+2024-08,Anna Kowalski,Centrifugal pumps,88183,111320
+2024-08,Anna Kowalski,Valves,21077,18781
+2024-08,Anna Kowalski,Control systems,79860,27532
+2024-08,Anna Kowalski,Spare parts,3543,3749
+2024-08,Ben Ortiz,Centrifugal pumps,38110,28269
+2024-08,Ben Ortiz,Valves,12980,0
+2024-08,Ben Ortiz,Control systems,64137,27976
+2024-08,Ben Ortiz,Spare parts,1747,3145
+2024-08,Carla Mensah,Centrifugal pumps,114160,124127
+2024-08,Carla Mensah,Valves,30353,48796
+2024-08,Carla Mensah,Control systems,53617,100908
+2024-08,Carla Mensah,Spare parts,3363,5331
+2024-08,David Reyes,Centrifugal pumps,105130,79638
+2024-08,David Reyes,Valves,21287,24995
+2024-08,David Reyes,Control systems,16567,0
+2024-08,David Reyes,Spare parts,3303,4596
+2024-08,Elena Petrova,Centrifugal pumps,138413,106355
+2024-08,Elena Petrova,Valves,43330,26388
+2024-08,Elena Petrova,Control systems,163490,211569
+2024-08,Elena Petrova,Spare parts,16603,10704
+2024-08,Farid Haddad,Centrifugal pumps,153697,164261
+2024-08,Farid Haddad,Valves,38590,44080
+2024-08,Farid Haddad,Control systems,133787,220306
+2024-08,Farid Haddad,Spare parts,9340,10837
+2024-08,Grace Lindqvist,Centrifugal pumps,74263,64030
+2024-08,Grace Lindqvist,Valves,53870,34962
+2024-08,Grace Lindqvist,Control systems,208267,0
+2024-08,Grace Lindqvist,Spare parts,6700,7033
+2024-08,Hiro Tanaka,Centrifugal pumps,76223,24283
+2024-08,Hiro Tanaka,Valves,40230,25509
+2024-08,Hiro Tanaka,Control systems,89553,61560
+2024-08,Hiro Tanaka,Spare parts,6157,2651
+2024-09,Anna Kowalski,Centrifugal pumps,94047,62727
+2024-09,Anna Kowalski,Valves,28907,25652
+2024-09,Anna Kowalski,Control systems,36043,40011
+2024-09,Anna Kowalski,Spare parts,2720,3118
+2024-09,Ben Ortiz,Centrifugal pumps,47833,57685
+2024-09,Ben Ortiz,Valves,16403,18485
+2024-09,Ben Ortiz,Control systems,80027,132005
+2024-09,Ben Ortiz,Spare parts,8300,1158
+2024-09,Carla Mensah,Centrifugal pumps,131613,97700
+2024-09,Carla Mensah,Valves,27653,22654
+2024-09,Carla Mensah,Control systems,96970,31207
+2024-09,Carla Mensah,Spare parts,6477,1889
+2024-09,David Reyes,Centrifugal pumps,92590,151122
+2024-09,David Reyes,Valves,12730,5745
+2024-09,David Reyes,Control systems,16567,47571
+2024-09,David Reyes,Spare parts,6000,1495
+2024-09,Elena Petrova,Centrifugal pumps,146400,185594
+2024-09,Elena Petrova,Valves,45080,51779
+2024-09,Elena Petrova,Control systems,167913,203435
+2024-09,Elena Petrova,Spare parts,11380,18316
+2024-09,Farid Haddad,Centrifugal pumps,163077,180264
+2024-09,Farid Haddad,Valves,28517,32737
+2024-09,Farid Haddad,Control systems,142850,84113
+2024-09,Farid Haddad,Spare parts,9493,6239
+2024-09,Grace Lindqvist,Centrifugal pumps,132507,128887
+2024-09,Grace Lindqvist,Valves,49690,62227
+2024-09,Grace Lindqvist,Control systems,138943,151078
+2024-09,Grace Lindqvist,Spare parts,8697,5503
+2024-09,Hiro Tanaka,Centrifugal pumps,44340,70420
+2024-09,Hiro Tanaka,Valves,21320,25048
+2024-09,Hiro Tanaka,Control systems,64570,143643
+2024-09,Hiro Tanaka,Spare parts,4810,6948
+2024-10,Anna Kowalski,Centrifugal pumps,129799,119000
+2024-10,Anna Kowalski,Valves,38539,40712
+2024-10,Anna Kowalski,Control systems,12178,35874
+2024-10,Anna Kowalski,Spare parts,7831,1502
+2024-10,Ben Ortiz,Centrifugal pumps,69791,56736
+2024-10,Ben Ortiz,Valves,25910,29566
+2024-10,Ben Ortiz,Control systems,71798,76177
+2024-10,Ben Ortiz,Spare parts,2798,20260
+2024-10,Carla Mensah,Centrifugal pumps,106725,186710
+2024-10,Carla Mensah,Valves,45635,16434
+2024-10,Carla Mensah,Control systems,94037,156382
+2024-10,Carla Mensah,Spare parts,5935,11137
+2024-10,David Reyes,Centrifugal pumps,58372,49577
+2024-10,David Reyes,Valves,17808,5896
+2024-10,David Reyes,Control systems,44890,0
+2024-10,David Reyes,Spare parts,1376,11357
+2024-10,Elena Petrova,Centrifugal pumps,166126,150420
+2024-10,Elena Petrova,Valves,73719,61878
+2024-10,Elena Petrova,Control systems,167929,95657
+2024-10,Elena Petrova,Spare parts,11749,5972
+2024-10,Farid Haddad,Centrifugal pumps,138455,152467
+2024-10,Farid Haddad,Valves,43181,12066
+2024-10,Farid Haddad,Control systems,94338,142247
+2024-10,Farid Haddad,Spare parts,10743,9929
+2024-10,Grace Lindqvist,Centrifugal pumps,216850,212386
+2024-10,Grace Lindqvist,Valves,54725,48167
+2024-10,Grace Lindqvist,Control systems,175784,261328
+2024-10,Grace Lindqvist,Spare parts,11575,14192
+2024-10,Hiro Tanaka,Centrifugal pumps,92959,38765
+2024-10,Hiro Tanaka,Valves,41482,14877
+2024-10,Hiro Tanaka,Control systems,90820,0
+2024-10,Hiro Tanaka,Spare parts,3144,4869
+2024-11,Anna Kowalski,Centrifugal pumps,142754,69184
+2024-11,Anna Kowalski,Valves,35880,47478
+2024-11,Anna Kowalski,Control systems,12178,83767
+2024-11,Anna Kowalski,Spare parts,5661,1225
+2024-11,Ben Ortiz,Centrifugal pumps,83127,42656
+2024-11,Ben Ortiz,Valves,26693,13362
+2024-11,Ben Ortiz,Control systems,34552,29601
+2024-11,Ben Ortiz,Spare parts,1733,1506
+2024-11,Carla Mensah,Centrifugal pumps,107207,94450
+2024-11,Carla Mensah,Valves,56638,37206
+2024-11,Carla Mensah,Control systems,142425,94969
+2024-11,Carla Mensah,Spare parts,6549,2481
+2024-11,David Reyes,Centrifugal pumps,74384,34423
+2024-11,David Reyes,Valves,19424,37359
+2024-11,David Reyes,Control systems,57775,0
+2024-11,David Reyes,Spare parts,1643,2170
+2024-11,Elena Petrova,Centrifugal pumps,187980,100571
+2024-11,Elena Petrova,Valves,60615,61158
+2024-11,Elena Petrova,Control systems,177119,164686
+2024-11,Elena Petrova,Spare parts,13333,10714
+2024-11,Farid Haddad,Centrifugal pumps,135907,87578
+2024-11,Farid Haddad,Valves,41697,19891
+2024-11,Farid Haddad,Control systems,93659,62336
+2024-11,Farid Haddad,Spare parts,11378,4304
+2024-11,Grace Lindqvist,Centrifugal pumps,206936,179612
+2024-11,Grace Lindqvist,Valves,54135,30267
+2024-11,Grace Lindqvist,Control systems,201781,214024
+2024-11,Grace Lindqvist,Spare parts,12116,672
+2024-11,Hiro Tanaka,Centrifugal pumps,139800,68685
+2024-11,Hiro Tanaka,Valves,35568,25335
+2024-11,Hiro Tanaka,Control systems,128617,0
+2024-11,Hiro Tanaka,Spare parts,4791,10879
+2024-12,Anna Kowalski,Centrifugal pumps,113162,191787
+2024-12,Anna Kowalski,Valves,56711,35364
+2024-12,Anna Kowalski,Control systems,22464,99615
+2024-12,Anna Kowalski,Spare parts,5422,5847
+2024-12,Ben Ortiz,Centrifugal pumps,65298,64694
+2024-12,Ben Ortiz,Valves,22232,27429
+2024-12,Ben Ortiz,Control systems,83626,120145
+2024-12,Ben Ortiz,Spare parts,1435,0
+2024-12,Carla Mensah,Centrifugal pumps,55897,96575
+2024-12,Carla Mensah,Valves,43475,64861
+2024-12,Carla Mensah,Control systems,114643,233847
+2024-12,Carla Mensah,Spare parts,4576,7981
+2024-12,David Reyes,Centrifugal pumps,54309,120939
+2024-12,David Reyes,Valves,8479,14841
+2024-12,David Reyes,Control systems,39714,63459
+2024-12,David Reyes,Spare parts,1241,15330
+2024-12,Elena Petrova,Centrifugal pumps,162850,140094
+2024-12,Elena Petrova,Valves,59037,87652
+2024-12,Elena Petrova,Control systems,201826,147075
+2024-12,Elena Petrova,Spare parts,11090,8570
+2024-12,Farid Haddad,Centrifugal pumps,134822,205499
+2024-12,Farid Haddad,Valves,48315,50035
+2024-12,Farid Haddad,Control systems,70502,75178
+2024-12,Farid Haddad,Spare parts,10702,14381
+2024-12,Grace Lindqvist,Centrifugal pumps,149230,196933
+2024-12,Grace Lindqvist,Valves,49507,33367
+2024-12,Grace Lindqvist,Control systems,213848,230458
+2024-12,Grace Lindqvist,Spare parts,11783,12651
+2024-12,Hiro Tanaka,Centrifugal pumps,184045,59080
+2024-12,Hiro Tanaka,Valves,30458,42097
+2024-12,Hiro Tanaka,Control systems,122002,0
+2024-12,Hiro Tanaka,Spare parts,7453,0
+2025-01,Anna Kowalski,Centrifugal pumps,120786,69175
+2025-01,Anna Kowalski,Valves,53078,48403
+2025-01,Anna Kowalski,Control systems,41219,163653
+2025-01,Anna Kowalski,Spare parts,5737,2932
+2025-01,Ben Ortiz,Centrifugal pumps,81508,111231
+2025-01,Ben Ortiz,Valves,16051,20379
+2025-01,Ben Ortiz,Control systems,73920,33798
+2025-01,Ben Ortiz,Spare parts,946,5397
+2025-01,Carla Mensah,Centrifugal pumps,57134,93480
+2025-01,Carla Mensah,Valves,33956,33210
+2025-01,Carla Mensah,Control systems,108964,59882
+2025-01,Carla Mensah,Spare parts,3470,3886
+2025-01,David Reyes,Centrifugal pumps,45497,9551
+2025-01,David Reyes,Valves,11738,0
+2025-01,David Reyes,Control systems,49046,49584
+2025-01,David Reyes,Spare parts,1862,0
+2025-01,Elena Petrova,Centrifugal pumps,172668,170471
+2025-01,Elena Petrova,Valves,49778,106475
+2025-01,Elena Petrova,Control systems,123254,291042
+2025-01,Elena Petrova,Spare parts,5741,10888
+2025-01,Farid Haddad,Centrifugal pumps,90768,54626
+2025-01,Farid Haddad,Valves,46107,11373
+2025-01,Farid Haddad,Control systems,87166,71984
+2025-01,Farid Haddad,Spare parts,11697,12288
+2025-01,Grace Lindqvist,Centrifugal pumps,103275,115536
+2025-01,Grace Lindqvist,Valves,35766,91465
+2025-01,Grace Lindqvist,Control systems,160943,391783
+2025-01,Grace Lindqvist,Spare parts,13783,24188
+2025-01,Hiro Tanaka,Centrifugal pumps,108344,108329
+2025-01,Hiro Tanaka,Valves,30150,24001
+2025-01,Hiro Tanaka,Control systems,69697,130845
+2025-01,Hiro Tanaka,Spare parts,7443,12606
+2025-02,Anna Kowalski,Centrifugal pumps,88133,183288
+2025-02,Anna Kowalski,Valves,57429,18211
+2025-02,Anna Kowalski,Control systems,98880,62949
+2025-02,Anna Kowalski,Spare parts,7058,0
+2025-02,Ben Ortiz,Centrifugal pumps,72027,31051
+2025-02,Ben Ortiz,Valves,22783,10276
+2025-02,Ben Ortiz,Control systems,61415,101674
+2025-02,Ben Ortiz,Spare parts,2430,678
+2025-02,Carla Mensah,Centrifugal pumps,76516,113058
+2025-02,Carla Mensah,Valves,36130,25096
+2025-02,Carla Mensah,Control systems,89908,37134
+2025-02,Carla Mensah,Spare parts,1567,5337
+2025-02,David Reyes,Centrifugal pumps,34608,52090
+2025-02,David Reyes,Valves,16117,28738
+2025-02,David Reyes,Control systems,36161,50499
+2025-02,David Reyes,Spare parts,3016,2935
+2025-02,Elena Petrova,Centrifugal pumps,120241,142814
+2025-02,Elena Petrova,Valves,70439,12779
+2025-02,Elena Petrova,Control systems,107685,192525
+2025-02,Elena Petrova,Spare parts,6490,7682
+2025-02,Farid Haddad,Centrifugal pumps,134215,166180
+2025-02,Farid Haddad,Valves,43347,52213
+2025-02,Farid Haddad,Control systems,77071,23980
+2025-02,Farid Haddad,Spare parts,13555,6113
+2025-02,Grace Lindqvist,Centrifugal pumps,92376,221497
+2025-02,Grace Lindqvist,Valves,31113,47628
+2025-02,Grace Lindqvist,Control systems,224175,293170
+2025-02,Grace Lindqvist,Spare parts,14550,10635
+2025-02,Hiro Tanaka,Centrifugal pumps,69063,83543
+2025-02,Hiro Tanaka,Valves,33602,44572
+2025-02,Hiro Tanaka,Control systems,70148,113033
+2025-02,Hiro Tanaka,Spare parts,4708,11763
+2025-03,Anna Kowalski,Centrifugal pumps,86958,99796
+2025-03,Anna Kowalski,Valves,47791,24353
+2025-03,Anna Kowalski,Control systems,145347,100710
+2025-03,Anna Kowalski,Spare parts,7408,7701
+2025-03,Ben Ortiz,Centrifugal pumps,69715,75708
+2025-03,Ben Ortiz,Valves,19566,5380
+2025-03,Ben Ortiz,Control systems,47504,55227
+2025-03,Ben Ortiz,Spare parts,2902,3134
+2025-03,Carla Mensah,Centrifugal pumps,82801,143752
+2025-03,Carla Mensah,Valves,44328,34079
+2025-03,Carla Mensah,Control systems,95295,156661
+2025-03,Carla Mensah,Spare parts,2399,3706
+2025-03,David Reyes,Centrifugal pumps,50950,141180
+2025-03,David Reyes,Valves,18099,23559
+2025-03,David Reyes,Control systems,29002,0
+2025-03,David Reyes,Spare parts,3165,5182
+2025-03,Elena Petrova,Centrifugal pumps,73528,172540
+2025-03,Elena Petrova,Valves,75809,62539
+2025-03,Elena Petrova,Control systems,91201,50360
+2025-03,Elena Petrova,Spare parts,11052,5277
+2025-03,Farid Haddad,Centrifugal pumps,169128,58085
+2025-03,Farid Haddad,Valves,44200,41119
+2025-03,Farid Haddad,Control systems,95857,0
+2025-03,Farid Haddad,Spare parts,15153,11328
+2025-03,Grace Lindqvist,Centrifugal pumps,119368,156416
+2025-03,Grace Lindqvist,Valves,33245,16432
+2025-03,Grace Lindqvist,Control systems,241374,228300
+2025-03,Grace Lindqvist,Spare parts,14855,8770
+2025-03,Hiro Tanaka,Centrifugal pumps,52059,69529
+2025-03,Hiro Tanaka,Valves,43767,53209
+2025-03,Hiro Tanaka,Control systems,87242,65746
+2025-03,Hiro Tanaka,Spare parts,4053,6147
+2025-04,Anna Kowalski,Centrifugal pumps,75445,82169
+2025-04,Anna Kowalski,Valves,47677,69560
+2025-04,Anna Kowalski,Control systems,125847,85939
+2025-04,Anna Kowalski,Spare parts,5470,12484
+2025-04,Ben Ortiz,Centrifugal pumps,60882,77765
+2025-04,Ben Ortiz,Valves,24263,33312
+2025-04,Ben Ortiz,Control systems,51993,98706
+2025-04,Ben Ortiz,Spare parts,3494,4997
+2025-04,Carla Mensah,Centrifugal pumps,151251,241801
+2025-04,Carla Mensah,Valves,40030,23147
+2025-04,Carla Mensah,Control systems,118265,77455
+2025-04,Carla Mensah,Spare parts,4209,6764
+2025-04,David Reyes,Centrifugal pumps,48585,50838
+2025-04,David Reyes,Valves,12286,26589
+2025-04,David Reyes,Control systems,49365,72836
+2025-04,David Reyes,Spare parts,2815,4340
+2025-04,Elena Petrova,Centrifugal pumps,82098,150589
+2025-04,Elena Petrova,Valves,80825,11694
+2025-04,Elena Petrova,Control systems,146408,111355
+2025-04,Elena Petrova,Spare parts,12047,2959
+2025-04,Farid Haddad,Centrifugal pumps,180922,269755
+2025-04,Farid Haddad,Valves,57321,87403
+2025-04,Farid Haddad,Control systems,60424,100721
+2025-04,Farid Haddad,Spare parts,11489,15155
+2025-04,Grace Lindqvist,Centrifugal pumps,148606,144675
+2025-04,Grace Lindqvist,Valves,37537,46711
+2025-04,Grace Lindqvist,Control systems,228030,251917
+2025-04,Grace Lindqvist,Spare parts,16533,20151
+2025-04,Hiro Tanaka,Centrifugal pumps,69465,78409
+2025-04,Hiro Tanaka,Valves,52277,56134
+2025-04,Hiro Tanaka,Control systems,106063,128044
+2025-04,Hiro Tanaka,Spare parts,5845,9054
+2025-05,Anna Kowalski,Centrifugal pumps,92276,121990
+2025-05,Anna Kowalski,Valves,50152,43987
+2025-05,Anna Kowalski,Control systems,76676,136676
+2025-05,Anna Kowalski,Spare parts,6788,3418
+2025-05,Ben Ortiz,Centrifugal pumps,45226,66435
+2025-05,Ben Ortiz,Valves,13759,30227
+2025-05,Ben Ortiz,Control systems,71386,85188
+2025-05,Ben Ortiz,Spare parts,1889,8134
+2025-05,Carla Mensah,Centrifugal pumps,136770,127707
+2025-05,Carla Mensah,Valves,43025,91691
+2025-05,Carla Mensah,Control systems,133907,145378
+2025-05,Carla Mensah,Spare parts,7977,15949
+2025-05,David Reyes,Centrifugal pumps,28122,103982
+2025-05,David Reyes,Valves,19309,39179
+2025-05,David Reyes,Control systems,76090,0
+2025-05,David Reyes,Spare parts,4649,8776
+2025-05,Elena Petrova,Centrifugal pumps,131407,228206
+2025-05,Elena Petrova,Valves,62636,31546
+2025-05,Elena Petrova,Control systems,143288,146605
+2025-05,Elena Petrova,Spare parts,13575,19899
+2025-05,Farid Haddad,Centrifugal pumps,153795,226848
+2025-05,Farid Haddad,Valves,77293,50218
+2025-05,Farid Haddad,Control systems,125427,107659
+2025-05,Farid Haddad,Spare parts,7030,19795
+2025-05,Grace Lindqvist,Centrifugal pumps,125202,121753
+2025-05,Grace Lindqvist,Valves,45507,37622
+2025-05,Grace Lindqvist,Control systems,205844,167341
+2025-05,Grace Lindqvist,Spare parts,15704,25766
+2025-05,Hiro Tanaka,Centrifugal pumps,74960,63533
+2025-05,Hiro Tanaka,Valves,47133,34176
+2025-05,Hiro Tanaka,Control systems,81300,77664
+2025-05,Hiro Tanaka,Spare parts,7835,12470
+2025-06,Anna Kowalski,Centrifugal pumps,104593,93622
+2025-06,Anna Kowalski,Valves,37360,24573
+2025-06,Anna Kowalski,Control systems,79127,102005
+2025-06,Anna Kowalski,Spare parts,5561,14414
+2025-06,Ben Ortiz,Centrifugal pumps,32143,86252
+2025-06,Ben Ortiz,Valves,16519,18262
+2025-06,Ben Ortiz,Control systems,48045,47907
+2025-06,Ben Ortiz,Spare parts,1619,831
+2025-06,Carla Mensah,Centrifugal pumps,151850,255925
+2025-06,Carla Mensah,Valves,36854,51340
+2025-06,Carla Mensah,Control systems,117485,130728
+2025-06,Carla Mensah,Spare parts,8109,7585
+2025-06,David Reyes,Centrifugal pumps,42567,64491
+2025-06,David Reyes,Valves,27383,32488
+2025-06,David Reyes,Control systems,64116,49183
+2025-06,David Reyes,Spare parts,5398,2893
+2025-06,Elena Petrova,Centrifugal pumps,155601,160525
+2025-06,Elena Petrova,Valves,51893,28538
+2025-06,Elena Petrova,Control systems,142903,144189
+2025-06,Elena Petrova,Spare parts,14130,4117
+2025-06,Farid Haddad,Centrifugal pumps,138088,357132
+2025-06,Farid Haddad,Valves,71219,81331
+2025-06,Farid Haddad,Control systems,118082,33673
+2025-06,Farid Haddad,Spare parts,6146,13604
+2025-06,Grace Lindqvist,Centrifugal pumps,76069,85580
+2025-06,Grace Lindqvist,Valves,51057,35982
+2025-06,Grace Lindqvist,Control systems,261342,194905
+2025-06,Grace Lindqvist,Spare parts,15077,8980
+2025-06,Hiro Tanaka,Centrifugal pumps,89471,41785
+2025-06,Hiro Tanaka,Valves,53421,58623
+2025-06,Hiro Tanaka,Control systems,58289,91166
+2025-06,Hiro Tanaka,Spare parts,9079,0
+2025-07,Anna Kowalski,Centrifugal pumps,107713,57083
+2025-07,Anna Kowalski,Valves,29196,52055
+2025-07,Anna Kowalski,Control systems,77522,36866
+2025-07,Anna Kowalski,Spare parts,5467,4892
+2025-07,Ben Ortiz,Centrifugal pumps,34833,89723
+2025-07,Ben Ortiz,Valves,7932,25444
+2025-07,Ben Ortiz,Control systems,40837,96872
+2025-07,Ben Ortiz,Spare parts,2108,3700
+2025-07,Carla Mensah,Centrifugal pumps,120682,158774
+2025-07,Carla Mensah,Valves,48065,21387
+2025-07,Carla Mensah,Control systems,100155,68010
+2025-07,Carla Mensah,Spare parts,7519,6307
+2025-07,David Reyes,Centrifugal pumps,58788,29507
+2025-07,David Reyes,Valves,33096,32351
+2025-07,David Reyes,Control systems,26725,162143
+2025-07,David Reyes,Spare parts,6500,1915
+2025-07,Elena Petrova,Centrifugal pumps,146682,292946
+2025-07,Elena Petrova,Valves,42751,42690
+2025-07,Elena Petrova,Control systems,127577,91857
+2025-07,Elena Petrova,Spare parts,15545,13035
+2025-07,Farid Haddad,Centrifugal pumps,162053,252227
+2025-07,Farid Haddad,Valves,57588,83146
+2025-07,Farid Haddad,Control systems,176876,241169
+2025-07,Farid Haddad,Spare parts,8760,5608
+2025-07,Grace Lindqvist,Centrifugal pumps,70193,275106
+2025-07,Grace Lindqvist,Valves,49871,66261
+2025-07,Grace Lindqvist,Control systems,233792,112176
+2025-07,Grace Lindqvist,Spare parts,9124,12577
+2025-07,Hiro Tanaka,Centrifugal pumps,69344,82815
+2025-07,Hiro Tanaka,Valves,39860,26115
+2025-07,Hiro Tanaka,Control systems,60167,0
+2025-07,Hiro Tanaka,Spare parts,7391,9492
+2025-08,Anna Kowalski,Centrifugal pumps,91711,108724
+2025-08,Anna Kowalski,Valves,21920,46258
+2025-08,Anna Kowalski,Control systems,83054,46150
+2025-08,Anna Kowalski,Spare parts,3685,6690
+2025-08,Ben Ortiz,Centrifugal pumps,39634,142891
+2025-08,Ben Ortiz,Valves,13499,31095
+2025-08,Ben Ortiz,Control systems,66702,75328
+2025-08,Ben Ortiz,Spare parts,1817,5211
+2025-08,Carla Mensah,Centrifugal pumps,118726,143066
+2025-08,Carla Mensah,Valves,31567,50197
+2025-08,Carla Mensah,Control systems,55761,269439
+2025-08,Carla Mensah,Spare parts,3498,9394
+2025-08,David Reyes,Centrifugal pumps,109335,52134
+2025-08,David Reyes,Valves,22138,23197
+2025-08,David Reyes,Control systems,17229,42136
+2025-08,David Reyes,Spare parts,3435,5030
+2025-08,Elena Petrova,Centrifugal pumps,143950,87235
+2025-08,Elena Petrova,Valves,45063,106746
+2025-08,Elena Petrova,Control systems,170030,229153
+2025-08,Elena Petrova,Spare parts,17267,11389
+2025-08,Farid Haddad,Centrifugal pumps,159845,319683
+2025-08,Farid Haddad,Valves,40134,72411
+2025-08,Farid Haddad,Control systems,139138,57773
+2025-08,Farid Haddad,Spare parts,9714,9436
+2025-08,Grace Lindqvist,Centrifugal pumps,77234,108956
+2025-08,Grace Lindqvist,Valves,56025,82256
+2025-08,Grace Lindqvist,Control systems,216597,137744
+2025-08,Grace Lindqvist,Spare parts,6968,4074
+2025-08,Hiro Tanaka,Centrifugal pumps,79272,97686
+2025-08,Hiro Tanaka,Valves,41839,39659
+2025-08,Hiro Tanaka,Control systems,93135,98309
+2025-08,Hiro Tanaka,Spare parts,6403,7664
+2025-09,Anna Kowalski,Centrifugal pumps,97809,30157
+2025-09,Anna Kowalski,Valves,30063,27707
+2025-09,Anna Kowalski,Control systems,37485,293131
+2025-09,Anna Kowalski,Spare parts,2829,6426
+2025-09,Ben Ortiz,Centrifugal pumps,49747,15434
+2025-09,Ben Ortiz,Valves,17059,36212
+2025-09,Ben Ortiz,Control systems,83228,82454
+2025-09,Ben Ortiz,Spare parts,8632,0
+2025-09,Carla Mensah,Centrifugal pumps,136878,202239
+2025-09,Carla Mensah,Valves,28759,30719
+2025-09,Carla Mensah,Control systems,100849,91022
+2025-09,Carla Mensah,Spare parts,6736,11601
+2025-09,David Reyes,Centrifugal pumps,96294,95907
+2025-09,David Reyes,Valves,13239,8007
+2025-09,David Reyes,Control systems,17229,21036
+2025-09,David Reyes,Spare parts,6240,2431
+2025-09,Elena Petrova,Centrifugal pumps,152256,223814
+2025-09,Elena Petrova,Valves,46883,61179
+2025-09,Elena Petrova,Control systems,174630,23657
+2025-09,Elena Petrova,Spare parts,11835,14677
+2025-09,Farid Haddad,Centrifugal pumps,169600,88674
+2025-09,Farid Haddad,Valves,29657,44994
+2025-09,Farid Haddad,Control systems,148564,69674
+2025-09,Farid Haddad,Spare parts,9873,2660
+2025-09,Grace Lindqvist,Centrifugal pumps,137807,175133
+2025-09,Grace Lindqvist,Valves,51678,24119
+2025-09,Grace Lindqvist,Control systems,144501,352064
+2025-09,Grace Lindqvist,Spare parts,9045,12305
+2025-09,Hiro Tanaka,Centrifugal pumps,46114,115726
+2025-09,Hiro Tanaka,Valves,22173,33158
+2025-09,Hiro Tanaka,Control systems,67153,77506
+2025-09,Hiro Tanaka,Spare parts,5002,9733
+2025-10,Anna Kowalski,Centrifugal pumps,86126,82797
+2025-10,Anna Kowalski,Valves,40033,45897
+2025-10,Anna Kowalski,Control systems,54565,263914
+2025-10,Anna Kowalski,Spare parts,2038,4832
+2025-10,Ben Ortiz,Centrifugal pumps,54080,35648
+2025-10,Ben Ortiz,Valves,22183,20130
+2025-10,Ben Ortiz,Control systems,83477,0
+2025-10,Ben Ortiz,Spare parts,8032,3400
+2025-10,Carla Mensah,Centrifugal pumps,126703,128220
+2025-10,Carla Mensah,Valves,26038,42780
+2025-10,Carla Mensah,Control systems,96131,60334
+2025-10,Carla Mensah,Spare parts,5675,4907
+2025-10,David Reyes,Centrifugal pumps,79522,66767
+2025-10,David Reyes,Valves,16033,20030
+2025-10,David Reyes,Control systems,17229,72632
+2025-10,David Reyes,Spare parts,5172,1246
+2025-10,Elena Petrova,Centrifugal pumps,152856,94669
+2025-10,Elena Petrova,Valves,59880,50566
+2025-10,Elena Petrova,Control systems,166178,83026
+2025-10,Elena Petrova,Spare parts,11634,9119
+2025-10,Farid Haddad,Centrifugal pumps,142477,141507
+2025-10,Farid Haddad,Valves,22031,83931
+2025-10,Farid Haddad,Control systems,98769,100497
+2025-10,Farid Haddad,Spare parts,7530,18087
+2025-10,Grace Lindqvist,Centrifugal pumps,174848,305770
+2025-10,Grace Lindqvist,Valves,50374,101454
+2025-10,Grace Lindqvist,Control systems,214687,269222
+2025-10,Grace Lindqvist,Spare parts,6975,21719
+2025-10,Hiro Tanaka,Centrifugal pumps,60656,129888
+2025-10,Hiro Tanaka,Valves,22166,41985
+2025-10,Hiro Tanaka,Control systems,46453,63163
+2025-10,Hiro Tanaka,Spare parts,7533,4707
+2025-11,Anna Kowalski,Centrifugal pumps,129712,119255
+2025-11,Anna Kowalski,Valves,42363,67178
+2025-11,Anna Kowalski,Control systems,72921,82058
+2025-11,Anna Kowalski,Spare parts,2846,2924
+2025-11,Ben Ortiz,Centrifugal pumps,55127,77938
+2025-11,Ben Ortiz,Valves,23889,25295
+2025-11,Ben Ortiz,Control systems,77601,42143
+2025-11,Ben Ortiz,Spare parts,7668,0
+2025-11,Carla Mensah,Centrifugal pumps,125847,148091
+2025-11,Carla Mensah,Valves,40043,57740
+2025-11,Carla Mensah,Control systems,158659,92239
+2025-11,Carla Mensah,Spare parts,7620,8109
+2025-11,David Reyes,Centrifugal pumps,70221,101510
+2025-11,David Reyes,Valves,18578,43548
+2025-11,David Reyes,Control systems,21993,22268
+2025-11,David Reyes,Spare parts,9485,6972
+2025-11,Elena Petrova,Centrifugal pumps,133293,41387
+2025-11,Elena Petrova,Valves,70775,53573
+2025-11,Elena Petrova,Control systems,141069,280103
+2025-11,Elena Petrova,Spare parts,8500,18782
+2025-11,Farid Haddad,Centrifugal pumps,148498,348474
+2025-11,Farid Haddad,Valves,26333,4851
+2025-11,Farid Haddad,Control systems,96744,0
+2025-11,Farid Haddad,Spare parts,9901,9867
+2025-11,Grace Lindqvist,Centrifugal pumps,193821,225211
+2025-11,Grace Lindqvist,Valves,38955,67323
+2025-11,Grace Lindqvist,Control systems,242223,212246
+2025-11,Grace Lindqvist,Spare parts,9211,35694
+2025-11,Hiro Tanaka,Centrifugal pumps,58185,99540
+2025-11,Hiro Tanaka,Valves,26842,66748
+2025-11,Hiro Tanaka,Control systems,0,84006
+2025-11,Hiro Tanaka,Spare parts,5245,3395
+2025-12,Anna Kowalski,Centrifugal pumps,111880,154293
+2025-12,Anna Kowalski,Valves,42782,42537
+2025-12,Anna Kowalski,Control systems,109748,84591
+2025-12,Anna Kowalski,Spare parts,3311,10077
+2025-12,Ben Ortiz,Centrifugal pumps,71791,19277
+2025-12,Ben Ortiz,Valves,20127,17129
+2025-12,Ben Ortiz,Control systems,59977,64815
+2025-12,Ben Ortiz,Spare parts,2115,5257
+2025-12,Carla Mensah,Centrifugal pumps,95288,144589
+2025-12,Carla Mensah,Valves,44782,23509
+2025-12,Carla Mensah,Control systems,124641,206717
+2025-12,Carla Mensah,Spare parts,4725,12200
+2025-12,David Reyes,Centrifugal pumps,55689,73484
+2025-12,David Reyes,Valves,16300,37377
+2025-12,David Reyes,Control systems,37724,84847
+2025-12,David Reyes,Spare parts,5602,954
+2025-12,Elena Petrova,Centrifugal pumps,134150,112944
+2025-12,Elena Petrova,Valves,83006,39196
+2025-12,Elena Petrova,Control systems,201573,63227
+2025-12,Elena Petrova,Spare parts,9589,17590
+2025-12,Farid Haddad,Centrifugal pumps,111921,142243
+2025-12,Farid Haddad,Valves,25067,57720
+2025-12,Farid Haddad,Control systems,68241,156867
+2025-12,Farid Haddad,Spare parts,10043,1640
+2025-12,Grace Lindqvist,Centrifugal pumps,156388,151524
+2025-12,Grace Lindqvist,Valves,51719,31512
+2025-12,Grace Lindqvist,Control systems,266465,321449
+2025-12,Grace Lindqvist,Spare parts,11402,28228
+2025-12,Hiro Tanaka,Centrifugal pumps,77986,90578
+2025-12,Hiro Tanaka,Valves,30001,59016
+2025-12,Hiro Tanaka,Control systems,42019,75009
+2025-12,Hiro Tanaka,Spare parts,7817,6385
+2026-01,Anna Kowalski,Centrifugal pumps,147503,91968
+2026-01,Anna Kowalski,Valves,32535,28399
+2026-01,Anna Kowalski,Control systems,104080,234772
+2026-01,Anna Kowalski,Spare parts,2874,0
+2026-01,Ben Ortiz,Centrifugal pumps,68082,183408
+2026-01,Ben Ortiz,Valves,18522,25576
+2026-01,Ben Ortiz,Control systems,83644,11907
+2026-01,Ben Ortiz,Spare parts,1869,6061
+2026-01,Carla Mensah,Centrifugal pumps,98935,180312
+2026-01,Carla Mensah,Valves,41163,50426
+2026-01,Carla Mensah,Control systems,104419,0
+2026-01,Carla Mensah,Spare parts,5699,11927
+2026-01,David Reyes,Centrifugal pumps,60653,71532
+2026-01,David Reyes,Valves,13964,53412
+2026-01,David Reyes,Control systems,54229,113556
+2026-01,David Reyes,Spare parts,5765,0
+2026-01,Elena Petrova,Centrifugal pumps,143482,171308
+2026-01,Elena Petrova,Valves,64945,73285
+2026-01,Elena Petrova,Control systems,208229,81778
+2026-01,Elena Petrova,Spare parts,8857,12266
+2026-01,Farid Haddad,Centrifugal pumps,136753,115141
+2026-01,Farid Haddad,Valves,36081,63026
+2026-01,Farid Haddad,Control systems,55044,144193
+2026-01,Farid Haddad,Spare parts,10514,11519
+2026-01,Grace Lindqvist,Centrifugal pumps,172172,121349
+2026-01,Grace Lindqvist,Valves,57446,61527
+2026-01,Grace Lindqvist,Control systems,292250,339044
+2026-01,Grace Lindqvist,Spare parts,14591,5034
+2026-01,Hiro Tanaka,Centrifugal pumps,82281,28150
+2026-01,Hiro Tanaka,Valves,34923,34080
+2026-01,Hiro Tanaka,Control systems,78901,0
+2026-01,Hiro Tanaka,Spare parts,8400,12350
+2026-02,Anna Kowalski,Centrifugal pumps,116903,44444
+2026-02,Anna Kowalski,Valves,29446,7982
+2026-02,Anna Kowalski,Control systems,105719,36418
+2026-02,Anna Kowalski,Spare parts,3834,4089
+2026-02,Ben Ortiz,Centrifugal pumps,73147,0
+2026-02,Ben Ortiz,Valves,11915,8372
+2026-02,Ben Ortiz,Control systems,62601,145871
+2026-02,Ben Ortiz,Spare parts,2926,3992
+2026-02,Carla Mensah,Centrifugal pumps,115995,51064
+2026-02,Carla Mensah,Valves,31387,70079
+2026-02,Carla Mensah,Control systems,80832,317235
+2026-02,Carla Mensah,Spare parts,4385,6942
+2026-02,David Reyes,Centrifugal pumps,68758,125673
+2026-02,David Reyes,Valves,17108,11992
+2026-02,David Reyes,Control systems,32237,60190
+2026-02,David Reyes,Spare parts,2583,10842
+2026-02,Elena Petrova,Centrifugal pumps,156659,93441
+2026-02,Elena Petrova,Valves,60046,28342
+2026-02,Elena Petrova,Control systems,176325,76412
+2026-02,Elena Petrova,Spare parts,7606,12607
+2026-02,Farid Haddad,Centrifugal pumps,89440,174317
+2026-02,Farid Haddad,Valves,34486,26568
+2026-02,Farid Haddad,Control systems,29803,123591
+2026-02,Farid Haddad,Spare parts,9714,8901
+2026-02,Grace Lindqvist,Centrifugal pumps,163003,19737
+2026-02,Grace Lindqvist,Valves,51979,53143
+2026-02,Grace Lindqvist,Control systems,296334,201113
+2026-02,Grace Lindqvist,Spare parts,13260,13894
+2026-02,Hiro Tanaka,Centrifugal pumps,82562,19759
+2026-02,Hiro Tanaka,Valves,40324,15040
+2026-02,Hiro Tanaka,Control systems,101164,48108
+2026-02,Hiro Tanaka,Spare parts,10338,3129
+2026-03,Anna Kowalski,Centrifugal pumps,121073,41596
+2026-03,Anna Kowalski,Valves,33876,36660
+2026-03,Anna Kowalski,Control systems,85450,27757
+2026-03,Anna Kowalski,Spare parts,7148,0
+2026-03,Ben Ortiz,Centrifugal pumps,61495,27902
+2026-03,Ben Ortiz,Valves,16200,25155
+2026-03,Ben Ortiz,Control systems,83411,70918
+2026-03,Ben Ortiz,Spare parts,2721,2981
+2026-03,Carla Mensah,Centrifugal pumps,161124,94903
+2026-03,Carla Mensah,Valves,28364,10800
+2026-03,Carla Mensah,Control systems,88258,74700
+2026-03,Carla Mensah,Spare parts,5203,7687
+2026-03,David Reyes,Centrifugal pumps,81938,32279
+2026-03,David Reyes,Valves,25477,10564
+2026-03,David Reyes,Control systems,39804,107757
+2026-03,David Reyes,Spare parts,4073,0
+2026-03,Elena Petrova,Centrifugal pumps,149011,250708
+2026-03,Elena Petrova,Valves,30503,43630
+2026-03,Elena Petrova,Control systems,119219,171197
+2026-03,Elena Petrova,Spare parts,5373,10586
+2026-03,Farid Haddad,Centrifugal pumps,165877,165107
+2026-03,Farid Haddad,Valves,59062,38985
+2026-03,Farid Haddad,Control systems,37627,0
+2026-03,Farid Haddad,Spare parts,10532,10896
+2026-03,Grace Lindqvist,Centrifugal pumps,172879,200505
+2026-03,Grace Lindqvist,Valves,37194,53964
+2026-03,Grace Lindqvist,Control systems,260894,0
+2026-03,Grace Lindqvist,Spare parts,12563,13785
+2026-03,Hiro Tanaka,Centrifugal pumps,72783,23125
+2026-03,Hiro Tanaka,Valves,48405,12897
+2026-03,Hiro Tanaka,Control systems,103494,153658
+2026-03,Hiro Tanaka,Spare parts,8989,7233
+2026-04,Anna Kowalski,Centrifugal pumps,99140,16900
+2026-04,Anna Kowalski,Valves,42227,35023
+2026-04,Anna Kowalski,Control systems,108371,69694
+2026-04,Anna Kowalski,Spare parts,8261,2919
+2026-04,Ben Ortiz,Centrifugal pumps,73070,113934
+2026-04,Ben Ortiz,Valves,23781,22689
+2026-04,Ben Ortiz,Control systems,76346,42520
+2026-04,Ben Ortiz,Spare parts,5339,2014
+2026-04,Carla Mensah,Centrifugal pumps,162784,138029
+2026-04,Carla Mensah,Valves,49667,15337
+2026-04,Carla Mensah,Control systems,127098,75281
+2026-04,Carla Mensah,Spare parts,8431,12303
+2026-04,David Reyes,Centrifugal pumps,99909,32028
+2026-04,David Reyes,Valves,29318,40799
+2026-04,David Reyes,Control systems,23299,0
+2026-04,David Reyes,Spare parts,5987,7787
+2026-04,Elena Petrova,Centrifugal pumps,174502,280821
+2026-04,Elena Petrova,Valves,35866,46683
+2026-04,Elena Petrova,Control systems,102256,227655
+2026-04,Elena Petrova,Spare parts,8746,6531
+2026-04,Farid Haddad,Centrifugal pumps,181286,249691
+2026-04,Farid Haddad,Valves,58677,12692
+2026-04,Farid Haddad,Control systems,62348,159498
+2026-04,Farid Haddad,Spare parts,15236,12190
+2026-04,Grace Lindqvist,Centrifugal pumps,133865,74361
+2026-04,Grace Lindqvist,Valves,32826,69258
+2026-04,Grace Lindqvist,Control systems,219593,127454
+2026-04,Grace Lindqvist,Spare parts,17486,9606
+2026-04,Hiro Tanaka,Centrifugal pumps,66605,61420
+2026-04,Hiro Tanaka,Valves,45670,43368
+2026-04,Hiro Tanaka,Control systems,91752,89279
+2026-04,Hiro Tanaka,Spare parts,8861,6047
+2026-05,Anna Kowalski,Centrifugal pumps,98103,185309
+2026-05,Anna Kowalski,Valves,42030,31821
+2026-05,Anna Kowalski,Control systems,109949,59574
+2026-05,Anna Kowalski,Spare parts,10383,6838
+2026-05,Ben Ortiz,Centrifugal pumps,76371,297640
+2026-05,Ben Ortiz,Valves,28007,7474
+2026-05,Ben Ortiz,Control systems,74863,48131
+2026-05,Ben Ortiz,Spare parts,4590,6570
+2026-05,Carla Mensah,Centrifugal pumps,196043,93913
+2026-05,Carla Mensah,Valves,55990,47966
+2026-05,Carla Mensah,Control systems,122914,119874
+2026-05,Carla Mensah,Spare parts,9922,9967
+2026-05,David Reyes,Centrifugal pumps,71469,80154
+2026-05,David Reyes,Valves,33121,37809
+2026-05,David Reyes,Control systems,40345,101337
+2026-05,David Reyes,Spare parts,5387,1827
+2026-05,Elena Petrova,Centrifugal pumps,176277,122798
+2026-05,Elena Petrova,Valves,22987,50622
+2026-05,Elena Petrova,Control systems,134815,119520
+2026-05,Elena Petrova,Spare parts,8521,8993
+2026-05,Farid Haddad,Centrifugal pumps,283851,247222
+2026-05,Farid Haddad,Valves,72935,84753
+2026-05,Farid Haddad,Control systems,74169,80519
+2026-05,Farid Haddad,Spare parts,16363,12676
+2026-05,Grace Lindqvist,Centrifugal pumps,112240,142028
+2026-05,Grace Lindqvist,Valves,39281,16658
+2026-05,Grace Lindqvist,Control systems,201233,249781
+2026-05,Grace Lindqvist,Spare parts,18172,13966
+2026-05,Hiro Tanaka,Centrifugal pumps,61565,159527
+2026-05,Hiro Tanaka,Valves,48457,28706
+2026-05,Hiro Tanaka,Control systems,100672,154115
+2026-05,Hiro Tanaka,Spare parts,6923,5145
+2026-06,Anna Kowalski,Centrifugal pumps,88743,51439
+2026-06,Anna Kowalski,Valves,40179,60139
+2026-06,Anna Kowalski,Control systems,93784,159103
+2026-06,Anna Kowalski,Spare parts,7741,13094
+2026-06,Ben Ortiz,Centrifugal pumps,85374,21111
+2026-06,Ben Ortiz,Valves,25574,21262
+2026-06,Ben Ortiz,Control systems,73691,35085
+2026-06,Ben Ortiz,Spare parts,4465,2785
+2026-06,Carla Mensah,Centrifugal pumps,173382,116576
+2026-06,Carla Mensah,Valves,55893,35135
+2026-06,Carla Mensah,Control systems,119305,48746
+2026-06,Carla Mensah,Spare parts,9929,7005
+2026-06,David Reyes,Centrifugal pumps,64972,12173
+2026-06,David Reyes,Valves,36490,18073
+2026-06,David Reyes,Control systems,66092,22866
+2026-06,David Reyes,Spare parts,4527,6703
+2026-06,Elena Petrova,Centrifugal pumps,223954,191032
+2026-06,Elena Petrova,Valves,33315,38311
+2026-06,Elena Petrova,Control systems,130454,216839
+2026-06,Elena Petrova,Spare parts,12109,7096
+2026-06,Farid Haddad,Centrifugal pumps,273520,225939
+2026-06,Farid Haddad,Valves,73785,34826
+2026-06,Farid Haddad,Control systems,122561,64172
+2026-06,Farid Haddad,Spare parts,13742,4231
+2026-06,Grace Lindqvist,Centrifugal pumps,162361,225851
+2026-06,Grace Lindqvist,Valves,46124,9633
+2026-06,Grace Lindqvist,Control systems,157740,178272
+2026-06,Grace Lindqvist,Spare parts,16096,12715
+2026-06,Hiro Tanaka,Centrifugal pumps,63929,95624
+2026-06,Hiro Tanaka,Valves,40986,31155
+2026-06,Hiro Tanaka,Control systems,56323,0
+2026-06,Hiro Tanaka,Spare parts,7332,3971
+2026-07,Anna Kowalski,Centrifugal pumps,86563,110737
+2026-07,Anna Kowalski,Valves,41302,43559
+2026-07,Anna Kowalski,Control systems,65575,39563
+2026-07,Anna Kowalski,Spare parts,8760,9744
+2026-07,Ben Ortiz,Centrifugal pumps,109599,99576
+2026-07,Ben Ortiz,Valves,24738,14805
+2026-07,Ben Ortiz,Control systems,70380,177562
+2026-07,Ben Ortiz,Spare parts,3377,4886
+2026-07,Carla Mensah,Centrifugal pumps,180333,78799
+2026-07,Carla Mensah,Valves,43240,25650
+2026-07,Carla Mensah,Control systems,157283,270994
+2026-07,Carla Mensah,Spare parts,8223,2874
+2026-07,David Reyes,Centrifugal pumps,49875,51997
+2026-07,David Reyes,Valves,30891,26554
+2026-07,David Reyes,Control systems,79969,166706
+2026-07,David Reyes,Spare parts,3359,3954
+2026-07,Elena Petrova,Centrifugal pumps,183657,87001
+2026-07,Elena Petrova,Valves,59214,64202
+2026-07,Elena Petrova,Control systems,161328,60146
+2026-07,Elena Petrova,Spare parts,9887,8192
+2026-07,Farid Haddad,Centrifugal pumps,311119,155177
+2026-07,Farid Haddad,Valves,81390,52779
+2026-07,Farid Haddad,Control systems,109606,97145
+2026-07,Farid Haddad,Spare parts,10192,11323
+2026-07,Grace Lindqvist,Centrifugal pumps,158413,165338
+2026-07,Grace Lindqvist,Valves,59963,53855
+2026-07,Grace Lindqvist,Control systems,152727,192491
+2026-07,Grace Lindqvist,Spare parts,9107,22978
+2026-07,Hiro Tanaka,Centrifugal pumps,72980,4385
+2026-07,Hiro Tanaka,Valves,42900,46860
+2026-07,Hiro Tanaka,Control systems,64286,131748
+2026-07,Hiro Tanaka,Spare parts,5810,16406
+2026-08,Anna Kowalski,Centrifugal pumps,64248,146573
+2026-08,Anna Kowalski,Valves,42865,20569
+2026-08,Anna Kowalski,Control systems,132111,0
+2026-08,Anna Kowalski,Spare parts,5918,5931
+2026-08,Ben Ortiz,Centrifugal pumps,85256,40233
+2026-08,Ben Ortiz,Valves,30278,25310
+2026-08,Ben Ortiz,Control systems,81910,152727
+2026-08,Ben Ortiz,Spare parts,3068,8014
+2026-08,Carla Mensah,Centrifugal pumps,163641,60253
+2026-08,Carla Mensah,Valves,35294,60191
+2026-08,Carla Mensah,Control systems,141378,137779
+2026-08,Carla Mensah,Spare parts,9169,21235
+2026-08,David Reyes,Centrifugal pumps,64629,60142
+2026-08,David Reyes,Valves,22187,40486
+2026-08,David Reyes,Control systems,70463,54390
+2026-08,David Reyes,Spare parts,3165,3557
+2026-08,Elena Petrova,Centrifugal pumps,198675,64422
+2026-08,Elena Petrova,Valves,69656,87980
+2026-08,Elena Petrova,Control systems,119104,143087
+2026-08,Elena Petrova,Spare parts,13669,13622
+2026-08,Farid Haddad,Centrifugal pumps,221045,102340
+2026-08,Farid Haddad,Valves,69299,20902
+2026-08,Farid Haddad,Control systems,122016,69604
+2026-08,Farid Haddad,Spare parts,6181,17443
+2026-08,Grace Lindqvist,Centrifugal pumps,188940,72508
+2026-08,Grace Lindqvist,Valves,56302,40983
+2026-08,Grace Lindqvist,Control systems,213980,191170
+2026-08,Grace Lindqvist,Spare parts,9655,10933
+2026-08,Hiro Tanaka,Centrifugal pumps,98408,110632
+2026-08,Hiro Tanaka,Valves,33342,20848
+2026-08,Hiro Tanaka,Control systems,62476,0
+2026-08,Hiro Tanaka,Spare parts,9038,3331
+2026-09,Anna Kowalski,Centrifugal pumps,73712,57253
+2026-09,Anna Kowalski,Valves,39676,51137
+2026-09,Anna Kowalski,Control systems,211872,71535
+2026-09,Anna Kowalski,Spare parts,5925,11641
+2026-09,Ben Ortiz,Centrifugal pumps,62137,78937
+2026-09,Ben Ortiz,Valves,28073,30268
+2026-09,Ben Ortiz,Control systems,51549,56971
+2026-09,Ben Ortiz,Spare parts,2860,5747
+2026-09,Carla Mensah,Centrifugal pumps,156305,76104
+2026-09,Carla Mensah,Valves,41167,26590
+2026-09,Carla Mensah,Control systems,139294,196387
+2026-09,Carla Mensah,Spare parts,8719,10204
+2026-09,David Reyes,Centrifugal pumps,77061,64821
+2026-09,David Reyes,Valves,17545,21037
+2026-09,David Reyes,Control systems,43621,66898
+2026-09,David Reyes,Spare parts,2957,0
+2026-09,Elena Petrova,Centrifugal pumps,136101,183412
+2026-09,Elena Petrova,Valves,72977,41725
+2026-09,Elena Petrova,Control systems,114091,95971
+2026-09,Elena Petrova,Spare parts,12099,3124
+2026-09,Farid Haddad,Centrifugal pumps,182603,78653
+2026-09,Farid Haddad,Valves,69541,25721
+2026-09,Farid Haddad,Control systems,78451,76307
+2026-09,Farid Haddad,Spare parts,10022,11451
+2026-09,Grace Lindqvist,Centrifugal pumps,196591,183332
+2026-09,Grace Lindqvist,Valves,68539,86332
+2026-09,Grace Lindqvist,Control systems,267810,230646
+2026-09,Grace Lindqvist,Spare parts,12092,14009
+2026-09,Hiro Tanaka,Centrifugal pumps,114930,54347
+2026-09,Hiro Tanaka,Valves,38265,23918
+2026-09,Hiro Tanaka,Control systems,83678,72126
+2026-09,Hiro Tanaka,Spare parts,7093,9285

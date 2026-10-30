@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=1a6c0526-7680-443a-9bf0-6407e0b41c50
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
 <title>Hartwell Sales Dashboard</title>
@@ -18,7 +15,7 @@
  --fg:#121820; --fg-2:#46505d; --fg-3:#6e7987;
  --accent:#1f5fa8; --accent-soft:#e3edf8;
  --s1:#2a78d6; --s2:#eb6834; --ly:#a6b0bc; --band:#e2e8ef; --band-edge:#c9d3de;
- --good:#0ca30c; --critical:#d03b3b; --good-soft:#e5f5e5; --critical-soft:#fbe9e9;
+ --good:#0ca30c; --critical:#d03b3b; --good-soft:#e5f5e5; --critical-soft:#fbe9e9; --good-text:#0a7a1f; --critical-text:#c42b2b;
  --font-ui:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  --font-num:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
  --r:10px;
@@ -28,13 +25,13 @@
  --fg:#eef1f4; --fg-2:#b5bec8; --fg-3:#8c96a2;
  --accent:#78aef0; --accent-soft:#1d2a3a;
  --s1:#3987e5; --s2:#d95926; --ly:#56606b; --band:#222b35; --band-edge:#33404d;
- --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; color-scheme:dark}}
+ --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; color-scheme:dark}}
 :root[data-theme="dark"]{
  --bg:#101317; --surface:#181c21; --surface-2:#20252b; --line:#2b323a; --line-2:#3a434d;
  --fg:#eef1f4; --fg-2:#b5bec8; --fg-3:#8c96a2;
  --accent:#78aef0; --accent-soft:#1d2a3a;
  --s1:#3987e5; --s2:#d95926; --ly:#56606b; --band:#222b35; --band-edge:#33404d;
- --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; color-scheme:dark}
+ --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);font-size:14px;line-height:1.45}
 .wrap{max-width:1280px;margin:0 auto;padding-inline:20px;padding-block:0 48px}
@@ -85,6 +82,7 @@ section.grp{margin-top:22px}
 .t-val{font-family:var(--font-num);font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1.1}
 .t-cmp{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:12px;color:var(--fg-2)}
 .t-cmp b{font-family:var(--font-num);font-weight:500;color:var(--fg)}
+.up,.t-cmp b.up{color:var(--good-text)} .dn,.t-cmp b.dn{color:var(--critical-text)} .q-val b{font-weight:500}
 .spark{height:40px;width:100%}
 .t-foot{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--fg-3);gap:8px}
 .chip{font-family:var(--font-ui);display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--fg);border-radius:20px;padding:2px 9px 2px 7px;border:1px solid var(--line-2);background:var(--surface)}
@@ -191,18 +189,11 @@ td.id{font-family:var(--font-num);color:var(--accent)}
 <div id="tip" hidden></div>
 
 <script>
-/* ===== Sample data for a fictional manufacturer (seeded, deterministic) ===== */
-const OFF = 3;                 // warm-up months before the first displayed month
-const N = 39;                  // internal months: Jul 2023 .. Sep 2026
+/* ===== Data: CSV files in /data, loaded before the first render ===== */
+const OFF = 3;                 // months before the first displayed month that still feed comparisons
+const N = 39;                  // months in the dataset: Jul 2023 .. Sep 2026
 const LAST = N - 1;            // Sep 2026
 const FIRST_SEL = OFF + 24;    // first month with 24 months of history before it
-
-function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}}
-const SEED=(typeof process!=='undefined'&&process.env&&process.env.SEED)?+process.env.SEED:14;
-const rng = mulberry32(SEED);
-function gauss(){let u=0,v=0;while(!u)u=rng();while(!v)v=rng();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
-function poisson(l){const L=Math.exp(-l);let k=0,p=1;do{k++;p*=rng();}while(p>L);return k-1;}
-function pickW(items,w){const s=w.reduce((a,b)=>a+b,0);let r=rng()*s;for(let i=0;i<items.length;i++){r-=w[i];if(r<=0)return items[i];}return items[items.length-1];}
 
 const DAY0 = Date.UTC(2023,6,1);
 const MS = []; for(let m=0;m<=N;m++) MS.push(Math.round((Date.UTC(2023,6+m,1)-DAY0)/864e5));
@@ -211,89 +202,37 @@ function monthOf(d){ if(d<0) return -1; let lo=0,hi=N; while(lo<hi){const mid=(l
 function monthLabel(m,short){const d=new Date(Date.UTC(2023,6+m,1));const mo=d.toLocaleString('en-US',{month:'short',timeZone:'UTC'});return short?mo+" '"+String(d.getUTCFullYear()).slice(2):mo+' '+d.getUTCFullYear();}
 function monthLong(m){const d=new Date(Date.UTC(2023,6+m,1));return d.toLocaleString('en-US',{month:'long',year:'numeric',timeZone:'UTC'});}
 function dayLabel(d){const x=new Date(DAY0+d*864e5);return x.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'});}
+const dayOf = s => s ? Math.round((Date.parse(s)-DAY0)/864e5) : null;
 
-const REGIONS = ['North','South','East','West'];
-const REPS = [
- {name:'Anna Kowalski',region:'North',skill:1.08},{name:'Ben Ortiz',region:'North',skill:0.95},
- {name:'Carla Mensah',region:'South',skill:1.12},{name:'David Reyes',region:'South',skill:0.9},
- {name:'Elena Petrova',region:'East',skill:1.02},{name:'Farid Haddad',region:'East',skill:0.97},
- {name:'Grace Lindqvist',region:'West',skill:1.05},{name:'Hiro Tanaka',region:'West',skill:0.93}];
-const CATS = ['Centrifugal pumps','Valves','Control systems','Spare parts'];
-const CP = {
- 'Centrifugal pumps':{val:22000,sig:.35,tat:3.0,win:.33,mar:.31,lead:30},
- 'Valves':{val:7000,sig:.4,tat:2.0,win:.37,mar:.37,lead:20},
- 'Control systems':{val:34000,sig:.35,tat:4.5,win:.29,mar:.43,lead:45},
- 'Spare parts':{val:1800,sig:.45,tat:1.0,win:.5,mar:.52,lead:7}};
-const CNAMES = {
- North:['Alder Mechanical','Birchfield Water Works','Cobalt Brewing Supply','Dunmore Paper Mills','Elmhurst HVAC Services','Fenwick Chemical'],
- South:['Gulfline Irrigation','Harbor Point Utilities','Ironwood Mining','Juniper Food Processing','Kessler Plastics','Lakeside Pharma Supply'],
- East:['Kestrel Fabrication','Marlow Process Systems','Northgate Power','Orchard Dairy Cooperative','Pinecrest Textiles','Quarry Ridge Aggregates'],
- West:['Redcliff Oil Services','Sierra Vista Water','Timberline Packaging','Upland Wafer Fab','Vantage Marine Works','Westbrook Brewing']};
-const CUSTOMERS = [];
-REGIONS.forEach(r=>{const reps=REPS.filter(x=>x.region===r);CNAMES[r].forEach((n,i)=>{const size=(n==='Fenwick Chemical'||n==='Westbrook Brewing')?0.22:0.55+rng()*0.95;
- CUSTOMERS.push({name:n,region:r,rep:reps[i%2].name,size,interval:1,
-  mix:[0.8+rng(),0.7+rng(),0.5+rng()*0.9,0.4+rng()*0.5]});});});
-const LAPSE_STORY = ['Kestrel Fabrication','Marlow Process Systems'];
-const SEASON = [0.86,0.9,1.04,1.05,1.06,1.1,0.95,0.9,1.06,1.05,1.0,0.86]; // Jan..Dec
-const season = m => SEASON[(6+m)%12];
-const growthF = m => 1+0.06*(m/12);
+const REGIONS = [], REPS = [], CATS = [], CUSTOMERS = [], QUOTES = [];
+const TARGET = {}, FCAST = {}, QDATA = {measures:[], funnel:[]};
 
-const LOST_R = ['Price','Lead time','Technical fit','Better offer from a competitor','No response from customer'];
-const WON_R = ['Fast delivery','Technical fit','Price','Existing relationship','Service and support'];
-const DELAY_C = ['Waiting for customer response','Pricing approval','Legal review','Missing product information'];
-
-const QUOTES = []; let qn = 0;
-for(let m=0;m<N;m++){
- for(const c of CUSTOMERS){
-  let lam = 14*c.size*season(m)*growthF(m);
-  if(LAPSE_STORY.includes(c.name) && m>=33) lam=0;
-  const n = poisson(lam);
-  for(let k=0;k<n;k++){
-   const cat = pickW(CATS,c.mix); const p = CP[cat];
-   const value = Math.round(p.val*c.size**0.4*Math.exp(p.sig*gauss())/10)*10;
-   const inq = MS[m]+Math.floor(rng()*(MS[m+1]-MS[m]));
-   let tat = p.tat*Math.exp(0.45*gauss());
-   if((cat==='Control systems'||cat==='Centrifugal pumps') && m>=35) tat*=2.2;
-   tat = Math.max(0.3, Math.round(tat*10)/10);
-   const iss = inq+Math.ceil(tat);
-   if(iss>endDay(LAST)) continue;
-   const im = monthOf(iss);
-   const rep = REPS.find(r=>r.name===c.rep);
-   let pw = p.win*rep.skill; if(tat>8) pw*=0.8;
-   const compStory = c.region==='East' && m>=37; if(compStory) pw*=0.78;
-   const delay = 6+Math.floor(rng()*44);
-   const dd = iss+delay;
-   const q = {id:'Q-'+String(2023+Math.floor((6+m)/12)).slice(2)+'-'+String(++qn).padStart(5,'0'),
-    m, cust:c.name, region:c.region, rep:c.rep, cat, value, inq, tat, iss, im,
-    valid: iss+30, cause: pickW(DELAY_C,[0.46,0.24,0.1,0.2])};
-   if(dd>endDay(LAST)){ q.status='open'; }
-   else{
-    q.dd=dd; q.dm=monthOf(dd);
-    if(rng()<pw){ q.status='won'; q.wonR=pickW(WON_R,[cat==='Spare parts'?3:1.4,cat==='Control systems'?2.4:1.4,1.1,1.6,0.9]);
-     const inv = dd+Math.max(2,Math.round(p.lead*(0.7+0.6*rng())));
-     let mar = p.mar+0.028*gauss(); if(c.rep==='David Reyes') mar-=0.025;
-     const im2 = inv<=endDay(LAST)?monthOf(inv):null;
-     const retP = (cat==='Valves' && im2!=null && im2>=36)?0.2:0.025;
-     const returned = rng()<retP;
-     const resp = rng()<0.45; const sat = rng()<(returned?0.35:0.885);
-     q.order = {id:'SO-'+q.id.slice(2), day:dd, inv, invM:im2, value, margin:mar, returned, resp, sat};
-    } else {
-     q.status='lost';
-     q.lostR = pickW(LOST_R,[2.2, cat==='Control systems'&&m>=35?2.6:1.1, 0.9, compStory?5:1.0, 0.8]);
-    }
-   }
-   QUOTES.push(q);
-  }
- }
+function parseCSV(text){
+ const [head,...lines] = text.trim().split(/\r?\n/); const keys = head.split(',');
+ return lines.map(l => { const c = l.split(','); const o = {}; keys.forEach((k,i)=>o[k]=c[i]??''); return o; });
 }
-
-/* revenue grid for targets and forecasts (full data, rep x category) */
-const REVG = {}; REPS.forEach(r=>{REVG[r.name]={};CATS.forEach(c=>REVG[r.name][c]=new Array(N).fill(0));});
-QUOTES.forEach(q=>{if(q.order&&q.order.invM!=null) REVG[q.rep][q.cat][q.order.invM]+=q.value;});
-const TARGET={}, FCAST={}; const fcShock = Array.from({length:N},()=>0.035*gauss());
-REPS.forEach(r=>{TARGET[r.name]={};FCAST[r.name]={};CATS.forEach(c=>{const g=REVG[r.name][c];
- TARGET[r.name][c]=g.map((v,m)=>{if(m>=OFF+12){const a=g[m-13],b=g[m-12],d=g[m-11]??g[m-12];return 1.04*(a+b+d)/3;}const w=g.slice(Math.max(OFF,m-1),m+2);return w.reduce((x,y)=>x+y,0)/Math.max(1,w.length);});
- FCAST[r.name][c]=g.map((v,m)=>v*(1.035+fcShock[m]+0.05*gauss()));});});
+const DATA = Promise.all(['sales_reps','customers','quotes','targets_and_forecasts','quarterly_measures','sales_funnel']
+ .map(n => fetch('data/'+n+'.csv').then(r => { if(!r.ok) throw new Error(n+'.csv: '+r.status); return r.text(); }).then(parseCSV)))
+ .then(([reps,custs,quotes,tf,qm,fun]) => {
+  reps.forEach(r => { REPS.push({name:r.sales_rep,region:r.region}); if(!REGIONS.includes(r.region)) REGIONS.push(r.region); });
+  custs.forEach(c => CUSTOMERS.push({name:c.customer,region:c.region,rep:c.sales_rep,interval:1}));
+  tf.forEach(r => { if(!CATS.includes(r.product_category)) CATS.push(r.product_category); });
+  REPS.forEach(r => { TARGET[r.name]={}; FCAST[r.name]={}; CATS.forEach(c => { TARGET[r.name][c]=new Array(N).fill(0); FCAST[r.name][c]=new Array(N).fill(0); }); });
+  tf.forEach(r => { const m = monthOf(dayOf(r.month+'-01')); TARGET[r.sales_rep][r.product_category][m] = +r.revenue_target; FCAST[r.sales_rep][r.product_category][m] = +r.revenue_forecast; });
+  quotes.forEach(r => {
+   const inq = dayOf(r.inquiry_date), iss = dayOf(r.quote_sent_date);
+   const q = {id:r.quote_id, m:monthOf(inq), cust:r.customer, region:r.region, rep:r.sales_rep, cat:r.product_category, value:+r.quote_value,
+    inq, tat:+r.turnaround_days, iss, im:monthOf(iss), valid:dayOf(r.valid_until), cause:r.delay_cause, status:r.status};
+   if(r.decision_date){ q.dd = dayOf(r.decision_date); q.dm = monthOf(q.dd); }
+   if(r.won_reason) q.wonR = r.won_reason;
+   if(r.lost_reason) q.lostR = r.lost_reason;
+   if(r.order_id){ const inv = dayOf(r.invoice_date);
+    q.order = {id:r.order_id, day:q.dd, inv, invM: inv==null?null:monthOf(inv), value:q.value, margin:+r.gross_margin,
+     returned:r.returned==='yes', resp:r.survey_answered==='yes', sat:r.satisfied==='yes'}; }
+   QUOTES.push(q);
+  });
+  QDATA.measures = qm; QDATA.funnel = fun;
+ });
 
 /* ===== aggregation ===== */
 function match(q,f){return (!f.region||q.region===f.region)&&(!f.cat||q.cat===f.cat)&&(!f.cust||q.cust===f.cust)&&(!f.rep||q.rep===f.rep);}
@@ -324,7 +263,6 @@ function agg(f){
 const median = a => {if(!a.length) return null; const s=a.slice().sort((x,y)=>x-y); const k=s.length>>1; return s.length%2?s[k]:(s[k-1]+s[k])/2;};
 const div = (a,b) => b? a/b : null;
 
-if(typeof module!=='undefined') module.exports={QUOTES,agg,median,div,N,LAST,OFF,FIRST_SEL,CUSTOMERS,REPS,CATS,monthLabel};
 
 </script>
 <script>
@@ -346,42 +284,45 @@ const F={
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 /* ===================== measures ===================== */
+// ch(): a comparison [label, text, change, polarity]; tone() colors it green when it moves the good way for the measure, red when the bad way.
+const ch=(k,fmt,d,pol)=>[k,fmt(d),d,pol];
+function tone(d,txt,pol){ if(d==null||isNaN(d)||!pol||!parseFloat(String(txt).replace(/[^0-9.]/g,''))) return ''; return (d>0)===(pol>0)?'up':'dn'; }
 const MEASURES=[
  {id:'rev',cat:'Revenue',name:'Sales revenue against target',owner:'Mark Ellison, vice president of sales',fmt:F.usd,ax:F.usdAx,pol:1,
   def:'Value of orders invoiced in the month, against the monthly target. Targets are set for each sales representative and product category.',
   formula:'Sum of invoiced order value in the month',source:'Order and invoicing system',
   v:(S,m)=>S.orders[m]?S.rev[m]:0, dim:'rep', rec:'orders',
-  cmp:(S,m)=>[S.hasTarget?['vs target',F.pctS(div(S.rev[m],S.target[m])-1)]:['Target','set by rep and category'],['vs '+monthLabel(m-12,1),F.pctS(div(S.rev[m],S.rev[m-12])-1)]]},
- {id:'growth',cat:'Revenue',name:'Monthly revenue growth rate',owner:'Priya Nair, sales operations manager',fmt:F.pctS,ax:F.pctAx,pol:1,
+  cmp:(S,m)=>[S.hasTarget?ch('vs target',F.pctS,div(S.rev[m],S.target[m])-1):['Target','set by rep and category'],ch('vs '+monthLabel(m-12,1),F.pctS,div(S.rev[m],S.rev[m-12])-1)]},
+ {id:'growth',cat:'Revenue',name:'Monthly revenue growth rate',owner:'Priya Nair, sales operations manager',fmt:F.pctS,ax:F.pctAx,pol:1,signed:true,
   def:'Percentage change in revenue against the same month last year (main figure) and against the previous month. Open the chart to split it by product category, region and customer.',
   formula:'(Revenue this month minus revenue in the same month last year) divided by revenue in the same month last year',source:'Order and invoicing system',
   v:(S,m)=>m-12>=OFF&&S.rev[m-12]?S.rev[m]/S.rev[m-12]-1:null, dim:'cat', rec:'orders',
-  cmp:(S,m)=>[['vs previous month',F.pctS(div(S.rev[m],S.rev[m-1])-1)],['Same month last year',F.usd(S.rev[m-12])]]},
+  cmp:(S,m)=>[ch('vs previous month',F.pctS,div(S.rev[m],S.rev[m-1])-1),['Same month last year',F.usd(S.rev[m-12])]]},
  {id:'fc',cat:'Revenue',name:'Actual revenue against forecast',owner:'Priya Nair, sales operations manager',fmt:F.pct,ax:F.pctAx,pol:0,
   def:'Revenue the team forecast at the start of the month compared with the revenue invoiced. The main figure is actual revenue in percent of the forecast.',
   formula:'Actual revenue divided by forecast revenue',source:'Forecast submitted on the first working day, and invoicing system',
   v:(S,m)=>S.hasTarget&&S.fc[m]?S.rev[m]/S.fc[m]:null, dim:'rep', rec:'orders',
-  cmp:(S,m)=>S.hasTarget?[['Actual',F.usd(S.rev[m])],['Forecast',F.usd(S.fc[m])],['Gap',F.usd(S.rev[m]-S.fc[m])]]:[['Forecast','set by rep and category']]},
+  cmp:(S,m)=>S.hasTarget?[['Actual',F.usd(S.rev[m])],['Forecast',F.usd(S.fc[m])],ch('Gap',F.usd,S.rev[m]-S.fc[m],1)]:[['Forecast','set by rep and category']]},
  {id:'gm',cat:'Cost',name:'Gross margin',owner:'Tom Becker, pricing manager',fmt:F.pct,ax:F.pctAx,pol:1,
   def:'Gross margin on orders invoiced in the month. Open the chart to split it by product category, customer and sales representative.',
   formula:'(Revenue minus cost of goods sold) divided by revenue',source:'Invoicing system and standard product costs',
   v:(S,m)=>div(S.rev[m]-S.cost[m],S.rev[m]), dim:'cat', rec:'orders',
-  cmp:(S,m)=>[['vs '+monthLabel(m-12,1),F.pts(div(S.rev[m]-S.cost[m],S.rev[m])-div(S.rev[m-12]-S.cost[m-12],S.rev[m-12]))],['Gross profit',F.usd(S.rev[m]-S.cost[m])]]},
+  cmp:(S,m)=>[ch('vs '+monthLabel(m-12,1),F.pts,div(S.rev[m]-S.cost[m],S.rev[m])-div(S.rev[m-12]-S.cost[m-12],S.rev[m-12])),['Gross profit',F.usd(S.rev[m]-S.cost[m])]]},
  {id:'q2o',cat:'Productivity',name:'Quote-to-order ratio',owner:'Laura Chen, inside sales manager',fmt:F.pct,ax:F.pctAx,pol:1,
   def:'Purchase orders received divided by quotes issued in the month, shown by sales representative and overall.',
   formula:'Purchase orders received divided by quotes issued',source:'Quote log and order system',
   v:(S,m)=>div(S.recv[m],S.issued[m]), dim:'rep', rec:'quotes',
-  cmp:(S,m)=>[['Orders',F.int(S.recv[m])],['Quotes issued',F.int(S.issued[m])],['vs '+monthLabel(m-12,1),F.pts(div(S.recv[m],S.issued[m])-div(S.recv[m-12],S.issued[m-12]))]]},
+  cmp:(S,m)=>[['Orders',F.int(S.recv[m])],['Quotes issued',F.int(S.issued[m])],ch('vs '+monthLabel(m-12,1),F.pts,div(S.recv[m],S.issued[m])-div(S.recv[m-12],S.issued[m-12]))]},
  {id:'aov',cat:'Productivity',name:'Average order value',owner:'Sam Okafor, key account manager',fmt:F.usd,ax:F.usdAx,pol:1,
   def:'Monthly revenue divided by the number of orders invoiced.',
   formula:'Revenue divided by number of orders invoiced',source:'Invoicing system',
   v:(S,m)=>div(S.rev[m],S.orders[m]), dim:'cat', rec:'orders',
-  cmp:(S,m)=>[['Orders invoiced',F.int(S.orders[m])],['vs '+monthLabel(m-12,1),F.pctS(div(div(S.rev[m],S.orders[m]),div(S.rev[m-12],S.orders[m-12]))-1)]]},
+  cmp:(S,m)=>[['Orders invoiced',F.int(S.orders[m])],ch('vs '+monthLabel(m-12,1),F.pctS,div(div(S.rev[m],S.orders[m]),div(S.rev[m-12],S.orders[m-12]))-1)]},
  {id:'tat',cat:'Time',name:'Quote turnaround time',owner:'Laura Chen, inside sales manager',fmt:F.days,ax:F.daysAx,pol:-1,
   def:'Median number of days from the customer inquiry to the quote being sent, for quotes sent in the month.',
   formula:'Median of (quote sent date minus inquiry date)',source:'Quote log',
   v:(S,m)=>median(S.turn[m]), dim:'cat', rec:'tat',
-  cmp:(S,m)=>[['Quotes sent',F.int(S.issued[m])],['vs '+monthLabel(m-12,1),F.sgnDays(median(S.turn[m])-median(S.turn[m-12]))]]},
+  cmp:(S,m)=>[['Quotes sent',F.int(S.issued[m])],ch('vs '+monthLabel(m-12,1),F.sgnDays,median(S.turn[m])-median(S.turn[m-12]))]},
  {id:'aging',cat:'Time',name:'Lost and aging open quotes',owner:'Laura Chen, inside sales manager',fmt:F.usd,ax:F.usdAx,pol:-1,
   def:'Aging open quotes are quotes past their validity date with no decision at month end. Lost quotes are quotes lost during the month. Both are shown by value and count; the main figure is the value of aging open quotes.',
   formula:'Value of open quotes past validity date at month end; value of quotes lost in the month',source:'Quote log',
@@ -391,12 +332,12 @@ const MEASURES=[
   def:'Repeat customers who have gone longer than their usual reorder interval without placing an order, counted at month end.',
   formula:'Count of repeat customers with no order for more than 1.5 times their usual reorder interval',source:'Order system',
   v:(S,m)=>S.lapsed[m], dim:'region', rec:'lapsed', count:true,
-  cmp:(S,m)=>[['vs '+monthLabel(m-12,1),F.sgnInt(S.lapsed[m]-S.lapsed[m-12])],['Previous month',F.int(S.lapsed[m-1])]]},
+  cmp:(S,m)=>[ch('vs '+monthLabel(m-12,1),F.sgnInt,S.lapsed[m]-S.lapsed[m-12]),['Previous month',F.int(S.lapsed[m-1])]]},
  {id:'ret',cat:'Customer satisfaction',name:'Return rate',owner:'Rita Alvarez, customer service manager',fmt:F.pct,ax:F.pctAx,pol:-1,
   def:'Number of returned orders divided by the total number of orders invoiced in the month.',
   formula:'Returned orders divided by orders invoiced',source:'Returns log and invoicing system',
   v:(S,m)=>div(S.returned[m],S.orders[m]), dim:'cat', rec:'orders',
-  cmp:(S,m)=>[['Returned',F.int(S.returned[m])+' of '+F.int(S.orders[m])+' orders'],['vs '+monthLabel(m-12,1),F.pts(div(S.returned[m],S.orders[m])-div(S.returned[m-12],S.orders[m-12]))]]}
+  cmp:(S,m)=>[['Returned',F.int(S.returned[m])+' of '+F.int(S.orders[m])+' orders'],ch('vs '+monthLabel(m-12,1),F.pts,div(S.returned[m],S.orders[m])-div(S.returned[m-12],S.orders[m-12]))]}
 ];
 const GROUPS=[['Revenue','outcome measures'],['Cost','outcome measure'],['Productivity','outcome and activity measures'],['Time','activity measures'],['Customer satisfaction','activity measures']];
 const ACTIONS={tat:{a:'Add a second applications engineer to review pump and control system quotes until turnaround returns to its normal range.',o:'Laura Chen, inside sales manager',d:'31 Oct 2026'},
@@ -526,15 +467,16 @@ function renderSummary(main){
  const scope=[f.region?f.region+' region':'All regions', f.cat||'all product categories', f.cust||null, f.rep||null].filter(Boolean).join(', ');
  main.insertAdjacentHTML('beforeend',`<div class="intro"><span>Showing <b>${esc(scope)}</b> for <b>${esc(monthLong(s))}</b>. Click a measure to open it.</span>
   <span class="key"><i></i>Normal range, average ±2 standard deviations of the previous 24 months</span>
-  <span class="key"><b style="background:var(--critical)"></b>Unfavorable, outside normal range</span><span class="key"><b style="background:var(--good)"></b>Favorable, outside normal range</span></div>`);
+  <span class="key"><b style="background:var(--critical)"></b>Unfavorable, outside normal range</span><span class="key"><b style="background:var(--good)"></b>Favorable, outside normal range</span>
+  <span class="key"><span class="up num">+2%</span><span class="dn num">-2%</span>Change in a good or bad direction for the measure</span></div>`);
  const gw=document.createElement('div'); gw.className='groups'; main.appendChild(gw);
  GROUPS.forEach(([g,sub])=>{ const sec=document.createElement('section'); sec.className='grp'; sec.innerHTML=`<h2>${esc(g)} <span>${esc(sub)}</span></h2><div class="tiles"></div>`; const box=sec.querySelector('.tiles');
   MEASURES.filter(ms=>ms.cat===g).forEach(ms=>{ const v=ms.v(S,s), b=band(ms,S,s), stt=status(ms,v,b);
    const t=document.createElement('div'); t.className='tile'+(stt?(stt.good?' out-good':' out-bad'):''); t.tabIndex=0; t.setAttribute('role','button'); t.setAttribute('aria-label','Open '+ms.name);
-   const cmp=ms.cmp(S,s).map(([k,val])=>`<span>${esc(k)} <b>${esc(val)}</b></span>`).join('');
+   const cmp=ms.cmp(S,s).map(([k,val,d,p])=>`<span>${esc(k)} <b class="${tone(d,val,p??ms.pol)}">${esc(val)}</b></span>`).join('');
    const med = r.kind==='rep'? `<span>Team median <b>${esc(ms.fmt(teamMedian(ms)))}</b></span>`:'';
    t.innerHTML=`<div class="t-head"><span class="t-name">${esc(ms.name)}</span><i class="info" tabindex="0" aria-label="Definition">i</i></div>
-    <div class="t-owner">Owner: ${esc(ms.owner)}</div><div class="t-val">${esc(ms.fmt(v))}</div><div class="t-cmp">${cmp}${med}</div><div class="spark"></div>
+    <div class="t-owner">Owner: ${esc(ms.owner)}</div><div class="t-val ${ms.signed?tone(v,ms.fmt(v),ms.pol):''}">${esc(ms.fmt(v))}</div><div class="t-cmp">${cmp}${med}</div><div class="spark"></div>
     <div class="t-foot">${stt?`<span class="chip ${stt.good?'good':'bad'}"><span class="dot"></span>${stt.above?'Above':'Below'} normal range</span>`:`<span>Within normal range</span>`}<span class="open-hint">Open</span></div>`;
    box.appendChild(t);
    t.addEventListener('click',e=>{ if(e.target.classList.contains('info')) return; openDetail(ms.id); });
@@ -585,7 +527,7 @@ function renderDetail(main){
  const ms13=[]; for(let m=s-12;m<=s;m++) ms13.push(m); const labs=ms13.map(m=>monthLabel(m,1)), full=ms13.map(m=>monthLong(m));
  main.insertAdjacentHTML('beforeend',`<button class="btn back" id="back" type="button">← All monthly measures</button>
  <div class="d-head"><div><div class="eyebrow">${esc(ms.cat)}</div><h2>${esc(ms.name)}</h2><p class="d-def">${esc(ms.def)}</p><p class="d-def" style="margin-top:4px">Owner: ${esc(ms.owner)}. Formula: ${esc(ms.formula)}.</p></div>
- <div class="d-big"><div><span class="lab">${esc(monthLong(s))}</span><span class="v">${esc(ms.fmt(v))}</span></div>${b?`<div><span class="lab">Normal range</span><span class="v">${esc(ms.count?F.dec(b.lo)+' to '+F.dec(b.hi):ms.fmt(b.lo)+' to '+ms.fmt(b.hi))}</span></div>`:''}
+ <div class="d-big"><div><span class="lab">${esc(monthLong(s))}</span><span class="v ${ms.signed?tone(v,ms.fmt(v),ms.pol):''}">${esc(ms.fmt(v))}</span></div>${b?`<div><span class="lab">Normal range</span><span class="v">${esc(ms.count?F.dec(b.lo)+' to '+F.dec(b.hi):ms.fmt(b.lo)+' to '+ms.fmt(b.hi))}</span></div>`:''}
  <div><span class="lab">Status</span><span class="v" style="font-size:15px;padding-top:6px">${stt?`<span class="chip ${stt.good?'good':'bad'}"><span class="dot"></span>${stt.above?'Above':'Below'} normal range</span>`:'Within normal range'}</span></div></div></div>
  <div class="panel"><h3>Last 13 months</h3><p class="sub">The shaded band is the normal range from ${esc(monthLong(s-24))} to ${esc(monthLong(s-1))}.</p><div class="chart" id="c1"></div><div class="legend" id="lg1"></div></div>
  <div id="c2wrap"></div>
@@ -664,13 +606,14 @@ const QFULL=QS.map((m,i)=>QL[i].replace("'",'20'));
 function quarterly(){
  const S=A({}); const cs=QS.map(q=>div(S.csS[q]+S.csS[q+1]+S.csS[q+2],S.csR[q]+S.csR[q+1]+S.csR[q+2]));
  const cyc=QS.map(q=>{const d=QUOTES.filter(x=>x.status==='won'&&x.dm>=q&&x.dm<=q+2).map(x=>x.dd-x.inq); return d.reduce((a,b)=>a+b,0)/d.length;});
+ const qcol=k=>QL.map(l=>{const r=QDATA.measures.find(x=>x.quarter.slice(-2)+" '"+x.quarter.slice(2,4)===l); return r&&r[k]!==''?+r[k]:null;});
  return [
-  {id:'csf',name:'Cost of sales function as a percentage of revenue',owner:'Provided by finance',fmt:F.pct,ax:F.pctAx,vals:[0.098,0.096,0.099,0.101,0.097,0.095,0.098,0.102],pol:-1,def:'Salaries, commissions, bonuses, travel and sales software, divided by revenue.'},
-  {id:'cret',name:'Customer retention rate',owner:'Sam Okafor, key account manager',fmt:F.pct,ax:F.pctAx,vals:[0.91,0.92,0.9,0.91,0.92,0.91,0.9,0.88],pol:1,def:'Customers who ordered in the same quarter last year and ordered again this quarter.'},
+  {id:'csf',name:'Cost of sales function as a percentage of revenue',owner:'Provided by finance',fmt:F.pct,ax:F.pctAx,vals:qcol('cost_of_sales_pct'),pol:-1,def:'Salaries, commissions, bonuses, travel and sales software, divided by revenue.'},
+  {id:'cret',name:'Customer retention rate',owner:'Sam Okafor, key account manager',fmt:F.pct,ax:F.pctAx,vals:qcol('customer_retention'),pol:1,def:'Customers who ordered in the same quarter last year and ordered again this quarter.'},
   {id:'csat',name:'Customer satisfaction rate',owner:'Rita Alvarez, customer service manager',fmt:F.pct,ax:F.pctAx,vals:cs,pol:1,def:'Quarterly average of the monthly survey, from the order data on this dashboard.'},
-  {id:'turn',name:'Sales team employee turnover',owner:'Mark Ellison with human resources',fmt:F.pct,ax:F.pctAx,vals:[0.083,0.083,0.167,0.167,0.167,0.083,0.083,0.167],pol:-1,def:'Leavers in the last 12 months divided by the average sales team headcount of 12.'},
+  {id:'turn',name:'Sales team employee turnover',owner:'Mark Ellison with human resources',fmt:F.pct,ax:F.pctAx,vals:qcol('sales_team_turnover'),pol:-1,def:'Leavers in the last 12 months divided by the average sales team headcount of 12.'},
   {id:'cyc',name:'Average sales cycle',owner:'Priya Nair, sales operations manager',fmt:F.days,ax:F.daysAx,vals:cyc,pol:-1,ref:42,refName:'Industry reference (sample)',def:'Average days from customer inquiry to purchase order for orders received in the quarter. Compared once a year with the industry reference.'},
-  {id:'win',name:'Win rate',owner:'Laura Chen, inside sales manager',fmt:F.pct,ax:F.pctAx,vals:[0.24,0.25,0.23,0.26,0.25,0.27,0.24,0.22],pol:1,def:'Share of qualified opportunities that ended as won deals.'}];
+  {id:'win',name:'Win rate',owner:'Laura Chen, inside sales manager',fmt:F.pct,ax:F.pctAx,vals:qcol('win_rate'),pol:1,def:'Share of qualified opportunities that ended as won deals.'}];
 }
 function renderQuarterly(main){
  const Q=quarterly();
@@ -679,11 +622,11 @@ function renderQuarterly(main){
  const qg=$('qg'); const draws=[];
  Q.forEach((q,i)=>{ const last=q.vals[7], prev=q.vals[3]; const p=document.createElement('div'); p.className='panel'; p.style.marginTop='0';
   const dlt = q.fmt===F.days? F.sgnDays(last-prev): F.pts(last-prev);
-  p.innerHTML=`<h3>${esc(q.name)}</h3><p class="sub">${esc(q.def)} Owner: ${esc(q.owner)}.</p><div class="q-val">${esc(q.fmt(last))} <span class="muted" style="font-size:13px">${esc(QFULL[7])}, ${esc(dlt)} vs ${esc(QFULL[3])}</span></div><div class="chart" id="q${i}" style="margin-top:6px"></div>${q.ref?`<div class="legend"><span><span class="sw-line" style="border-top-color:var(--s1)"></span>Average sales cycle</span><span><span class="sw-dash" style="border-top-color:var(--fg-3)"></span>${esc(q.refName)}, ${q.ref} days</span></div>`:''}`;
+  p.innerHTML=`<h3>${esc(q.name)}</h3><p class="sub">${esc(q.def)} Owner: ${esc(q.owner)}.</p><div class="q-val">${esc(q.fmt(last))} <span class="muted" style="font-size:13px">${esc(QFULL[7])}, <b class="${tone(last-prev,dlt,q.pol)}">${esc(dlt)}</b> vs ${esc(QFULL[3])}</span></div><div class="chart" id="q${i}" style="margin-top:6px"></div>${q.ref?`<div class="legend"><span><span class="sw-line" style="border-top-color:var(--s1)"></span>Average sales cycle</span><span><span class="sw-dash" style="border-top-color:var(--fg-3)"></span>${esc(q.refName)}, ${q.ref} days</span></div>`:''}`;
   qg.appendChild(p);
   draws.push(()=>trend($('q'+i),{labels:QL,full:QFULL,fmt:q.fmt,ax:q.ax,h:170,L:50,ref:q.ref??null,zero:q.id==='turn',series:[{name:q.name,vals:q.vals,kind:q.id==='turn'?'bar':'line',cls:q.id==='turn'?'bar1':'ln1',color:'--s1',endDot:'dot1'}],
    extra:q.ref?(t)=>tipRow(t,q.refName,q.ref+' days'):null})); });
- const stages=[['Prospecting',410],['Qualified opportunity',226],['Proposal',152],['Negotiation',88],['Finalizing',66],['Purchase order',54]];
+ const stages=QDATA.funnel.map(r=>[r.stage,+r.opportunities]);
  const rows=stages.map(([l,n],i)=>({label:l,value:n,note:i?Math.round(n/stages[i-1][1]*100)+'% of previous':'', tip:t=>{if(i)tipRow(t,'Moved on from previous stage',Math.round(n/stages[i-1][1]*100)+'%');}}));
  draws.push(()=>hbars($('fun'),rows,{fmt:F.int,ax:F.daysAx,vw:170,vname:'Opportunities'}));
  main._draws=draws; draws.forEach(d=>d());
@@ -696,9 +639,9 @@ function render(){
  else if(st.tab==='why') renderWhy(main); else renderQuarterly(main);
 }
 let rz; addEventListener('resize',()=>{clearTimeout(rz); rz=setTimeout(()=>{const main=$('main'); if(main._draws) main._draws.forEach(d=>d()); main.querySelectorAll('.tile').forEach(t=>t._draw&&t._draw());},150);});
-render();
+$('main').innerHTML='<p class="intro">Loading data…</p>';
+DATA.then(render).catch(e=>{ $('main').innerHTML=`<p class="intro">The data files could not be loaded (${esc(e.message)}).</p>`; });
 </script>
 
 </body>
 </html>
-<script async src="/.netlify/scripts/hud?variant=public" data-nf-variant="public" data-netlify-site-id="1a6c0526-7680-443a-9bf0-6407e0b41c50" data-app-host="app.netlify.com" data-account-tier="free"></script>
