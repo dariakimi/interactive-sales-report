@@ -16,6 +16,7 @@
  --accent:#1f5fa8; --accent-soft:#e3edf8;
  --s1:#2a78d6; --s2:#eb6834; --ly:#a6b0bc; --band:#e2e8ef; --band-edge:#c9d3de;
  --good:#0ca30c; --critical:#d03b3b; --good-soft:#e5f5e5; --critical-soft:#fbe9e9; --good-text:#0a7a1f; --critical-text:#c42b2b;
+ --bar-hi:#1d5fb4; --bar-lo:#e07a2e; --bar-mut:#a9c3e3;
  --font-ui:"Instrument Sans",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
  --font-num:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
  --r:10px;
@@ -25,13 +26,13 @@
  --fg:#eef1f4; --fg-2:#b5bec8; --fg-3:#8c96a2;
  --accent:#78aef0; --accent-soft:#1d2a3a;
  --s1:#3987e5; --s2:#d95926; --ly:#56606b; --band:#222b35; --band-edge:#33404d;
- --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; color-scheme:dark}}
+ --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; --bar-hi:#5a9ff0; --bar-lo:#e0823d; --bar-mut:#2e4a6b; color-scheme:dark}}
 :root[data-theme="dark"]{
  --bg:#101317; --surface:#181c21; --surface-2:#20252b; --line:#2b323a; --line-2:#3a434d;
  --fg:#eef1f4; --fg-2:#b5bec8; --fg-3:#8c96a2;
  --accent:#78aef0; --accent-soft:#1d2a3a;
  --s1:#3987e5; --s2:#d95926; --ly:#56606b; --band:#222b35; --band-edge:#33404d;
- --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; color-scheme:dark}
+ --good:#0ca30c; --critical:#d03b3b; --good-soft:#15291a; --critical-soft:#33191a; --good-text:#4cc764; --critical-text:#f07070; --bar-hi:#5a9ff0; --bar-lo:#e0823d; --bar-mut:#2e4a6b; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--font-ui);font-size:14px;line-height:1.45}
 .wrap{max-width:1280px;margin:0 auto;padding-inline:20px;padding-block:0 48px}
@@ -106,6 +107,7 @@ section.grp{margin-top:22px}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 @media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}}
 .chart{position:relative;width:100%}
+.chart svg{display:block;max-width:100%;height:auto}
 .legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--fg-2);margin-top:8px}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .sw-line{width:16px;height:0;border-top:2px solid}
@@ -135,14 +137,14 @@ td.id{font-family:var(--font-num);color:var(--accent)}
 .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
 .ln1{stroke:var(--s1)} .ln2{stroke:var(--s2)} .lnly{stroke:var(--ly)} .lntg{stroke:var(--fg-2);stroke-dasharray:5 4;stroke-width:1.5}
 .ref{stroke:var(--fg-3);stroke-dasharray:3 3;stroke-width:1}
-.bar1{fill:var(--s1)} .bar2{fill:var(--s2)} .barly{fill:var(--ly)}
+.bar1{fill:var(--s1)} .bar2{fill:var(--s2)} .barly{fill:var(--ly)} .barhi{fill:var(--bar-hi)} .barlo{fill:var(--bar-lo)} .barmut{fill:var(--bar-mut)}
 .dot1{fill:var(--s1);stroke:var(--surface);stroke-width:2} .dot2{fill:var(--s2);stroke:var(--surface);stroke-width:2}
 .dotbad{fill:var(--critical);stroke:var(--surface);stroke-width:2} .dotgood{fill:var(--good);stroke:var(--surface);stroke-width:2}
 .tick{stroke:var(--fg);stroke-width:2}
 .xh{stroke:var(--fg-3);stroke-width:1}
 .hit{fill:transparent;cursor:crosshair}
 .hitbar{fill:transparent;cursor:default}
-.hitbar:hover+.bar1,.rowg:hover .bar1{opacity:.82}
+.hitbar:hover+.bar1,.rowg:hover .bar1,.rowg:hover .barhi,.rowg:hover .barlo,.rowg:hover .barmut{opacity:.82}
 #tip{position:fixed;z-index:50;pointer-events:none;background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:8px 10px;font-size:12.5px;box-shadow:0 6px 20px rgba(0,0,0,.14);max-width:300px}
 #tip .tt{color:var(--fg-3);font-size:11.5px;margin-bottom:4px}
 #tip .row{display:flex;align-items:center;gap:8px;justify-content:space-between}
@@ -151,7 +153,7 @@ td.id{font-family:var(--font-num);color:var(--accent)}
 #tip .key{width:12px;border-top:2px solid}
 #tip p{margin:0;color:var(--fg-2)}
 #tip p+p{margin-top:5px}
-.q-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.q-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px}
 .q-val{font-family:var(--font-num);font-size:20px}
 .muted{color:var(--fg-3)}
 @media (max-width:520px){.wrap{padding-inline:16px}.closed{margin-left:0;width:100%}.f select{min-width:0;max-width:100%}.f{flex:1 1 44%}.t-val{font-size:23px}}
@@ -293,11 +295,11 @@ const MEASURES=[
   formula:'Sum of invoiced order value in the month',source:'Order and invoicing system',
   v:(S,m)=>S.orders[m]?S.rev[m]:0, dim:'rep', rec:'orders',
   cmp:(S,m)=>[S.hasTarget?ch('vs target',F.pctS,div(S.rev[m],S.target[m])-1):['Target','set by rep and category'],ch('vs '+monthLabel(m-12,1),F.pctS,div(S.rev[m],S.rev[m-12])-1)]},
- {id:'growth',cat:'Revenue',name:'Monthly revenue growth rate',owner:'Priya Nair, sales operations manager',fmt:F.pctS,ax:F.pctAx,pol:1,signed:true,
-  def:'Percentage change in revenue against the same month last year (main figure) and against the previous month. Open the chart to split it by product category, region and customer.',
-  formula:'(Revenue this month minus revenue in the same month last year) divided by revenue in the same month last year',source:'Order and invoicing system',
-  v:(S,m)=>m-12>=OFF&&S.rev[m-12]?S.rev[m]/S.rev[m-12]-1:null, dim:'cat', rec:'orders',
-  cmp:(S,m)=>[ch('vs previous month',F.pctS,div(S.rev[m],S.rev[m-1])-1),['Same month last year',F.usd(S.rev[m-12])]]},
+ {id:'growth',cat:'Revenue',name:'Revenue growth rate',owner:'Priya Nair, sales operations manager',fmt:F.pctS,ax:F.pctAx,pol:1,signed:true,
+  def:'Revenue in the last three months against the same three months last year (main figure). Three months are used because single months swing with the timing of large orders. The card also shows this month against the same month last year and against the previous month.',
+  formula:'(Revenue in the last 3 months minus revenue in the same 3 months last year) divided by revenue in the same 3 months last year',source:'Order and invoicing system',
+  v:(S,m)=>{ if(m-14<OFF) return null; const a=S.rev[m]+S.rev[m-1]+S.rev[m-2], b=S.rev[m-12]+S.rev[m-13]+S.rev[m-14]; return b?a/b-1:null; }, dim:'cat', rec:'orders',
+  cmp:(S,m)=>[ch(monthLabel(m,1)+' vs '+monthLabel(m-12,1),F.pctS,div(S.rev[m],S.rev[m-12])-1),ch('vs previous month',F.pctS,div(S.rev[m],S.rev[m-1])-1)]},
  {id:'fc',cat:'Revenue',name:'Actual revenue against forecast',owner:'Priya Nair, sales operations manager',fmt:F.pct,ax:F.pctAx,pol:0,
   def:'Revenue the team forecast at the start of the month compared with the revenue invoiced. The main figure is actual revenue in percent of the forecast.',
   formula:'Actual revenue divided by forecast revenue',source:'Forecast submitted on the first working day, and invoicing system',
@@ -354,7 +356,7 @@ const cache=new Map();
 function A(f){ const k=JSON.stringify(f); if(!cache.has(k)) cache.set(k,agg(f)); return cache.get(k); }
 function band(ms,S,s){ const w=[]; for(let m=s-24;m<s;m++){const v=ms.v(S,m); if(v!=null&&!isNaN(v)) w.push(v);} if(w.length<6) return null;
  const mu=w.reduce((a,b)=>a+b,0)/w.length; const sd=Math.sqrt(w.reduce((a,b)=>a+(b-mu)**2,0)/(w.length-1));
- let lo=mu-2*sd, hi=mu+2*sd; if(ms.id!=='growth') lo=Math.max(0,lo); return {lo,hi,mu}; }
+ let lo=mu-2*sd, hi=mu+2*sd; lo=Math.max(ms.id==='growth'?-1:0,lo); if(ms.fmt===F.pct&&ms.id!=='fc') hi=Math.min(1,hi); return {lo,hi,mu}; }
 function status(ms,v,b){ if(v==null||!b) return null; if(v>=b.lo&&v<=b.hi) return null; const above=v>b.hi;
  const good = ms.pol===0?false:(ms.pol>0?above:!above); return {above,good}; }
 
@@ -375,6 +377,12 @@ const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).tri
 function nice(min,max,n=4){ if(min===max){min-=Math.abs(min)*.1||1;max+=Math.abs(max)*.1||1;} const sp=max-min; const s0=sp/n; const mg=Math.pow(10,Math.floor(Math.log10(s0))); const nm=s0/mg;
  const st=(nm<1.5?1:nm<3?2:nm<7?5:10)*mg; const lo=Math.floor(min/st)*st, hi=Math.ceil(max/st)*st; const t=[]; for(let v=lo;v<=hi+st/2;v+=st) t.push(+v.toFixed(10)); return {lo,hi,t}; }
 function svgEl(w,h){return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img">`;}
+// extremes(): index of the highest and lowest bar, each only when it is the single highest or lowest of three or more bars
+function extremes(vals){ const v=vals.map((x,i)=>[x,i]).filter(([x])=>x!=null&&!isNaN(x)); if(v.length<3) return {};
+ const mx=Math.max(...v.map(a=>a[0])), mn=Math.min(...v.map(a=>a[0])); if(mx===mn) return {}; const at=t=>{const h=v.filter(a=>a[0]===t); return h.length===1?h[0][1]:null;};
+ return {hi:at(mx),lo:at(mn)}; }
+const barCls=(ex,i,cls)=> ex.hi==null&&ex.lo==null?cls: i===ex.hi?'barhi': i===ex.lo?'barlo':'barmut';
+const exLegend=ex=> ex.hi==null&&ex.lo==null?'':`<div class="legend">${ex.hi!=null?'<span><span class="sw-bar" style="background:var(--bar-hi)"></span>Highest</span>':''}${ex.lo!=null?'<span><span class="sw-bar" style="background:var(--bar-lo)"></span>Lowest</span>':''}</div>`;
 
 /* trend chart: series [{name,vals,kind:'bar'|'line',cls,color,dash}] */
 function trend(el,o){
@@ -388,15 +396,16 @@ function trend(el,o){
  if(o.band) g+=`<rect class="bandr" x="${L}" width="${pw}" y="${y(o.band.hi)}" height="${Math.max(1,y(o.band.lo)-y(o.band.hi))}"/>`;
  if(o.ref!=null) g+=`<line class="ref" x1="${L}" x2="${W-R}" y1="${y(o.ref)}" y2="${y(o.ref)}"/>`;
  const bars=o.series.filter(s=>s.kind==='bar'); const nb=bars.length; const bwid=Math.min(26,bw*0.62/Math.max(1,nb));
- bars.forEach((s,j)=>{ s.vals.forEach((v,i)=>{ if(v==null||isNaN(v)) return; const cx=x(i)-(nb*bwid+(nb-1)*2)/2+j*(bwid+2); const y0=y(Math.max(0,sc.lo)), y1=y(v); const top=Math.min(y0,y1), h=Math.abs(y0-y1);
-  const r=Math.min(4,h,bwid/2); g+= v>=0? `<path class="${s.cls}" d="M${cx},${y0} V${top+r} Q${cx},${top} ${cx+r},${top} H${cx+bwid-r} Q${cx+bwid},${top} ${cx+bwid},${top+r} V${y0} Z"/>` : `<rect class="${s.cls}" x="${cx}" y="${top}" width="${bwid}" height="${h}"/>`; }); });
+ const tex=nb===1?extremes(bars[0].vals):{};
+ bars.forEach((s,j)=>{ const bc=i=>nb===1?barCls(tex,i,s.cls):s.cls; s.vals.forEach((v,i)=>{ if(v==null||isNaN(v)) return; const cx=x(i)-(nb*bwid+(nb-1)*2)/2+j*(bwid+2); const y0=y(Math.max(0,sc.lo)), y1=y(v); const top=Math.min(y0,y1), h=Math.abs(y0-y1);
+  const r=Math.min(4,h,bwid/2); g+= v>=0? `<path class="${bc(i)}" d="M${cx},${y0} V${top+r} Q${cx},${top} ${cx+r},${top} H${cx+bwid-r} Q${cx+bwid},${top} ${cx+bwid},${top+r} V${y0} Z"/>` : `<rect class="${bc(i)}" x="${cx}" y="${top}" width="${bwid}" height="${h}"/>`; }); });
  o.series.filter(s=>s.kind!=='bar').forEach(s=>{ let d='',pen=false; s.vals.forEach((v,i)=>{ if(v==null||isNaN(v)){pen=false;return;} d+=(pen?'L':'M')+x(i).toFixed(1)+','+y(v).toFixed(1)+' '; pen=true;}); g+=`<path class="ln ${s.cls}" d="${d}"/>`;
   const li=s.vals.length-1; if(s.endDot && s.vals[li]!=null) g+=`<circle class="${s.endDot}" cx="${x(li)}" cy="${y(s.vals[li])}" r="4.5"/>`; });
  {const by=(sc.lo<0&&sc.hi>0)?y(0):y(sc.lo); g+=`<line class="base" x1="${L}" x2="${W-R}" y1="${by}" y2="${by}"/>`;}
  const every=Math.ceil(n*46/pw); o.labels.forEach((lb,i)=>{ if((n-1-i)%every) return; g+=`<text class="svgt" x="${x(i)}" y="${H-7}" text-anchor="middle">${esc(lb)}</text>`;});
  g+=`<line class="xh" id="xh" x1="0" x2="0" y1="${T}" y2="${T+ph}" visibility="hidden"/>`;
  for(let i=0;i<n;i++) g+=`<rect class="hit" data-i="${i}" x="${L+bw*i}" y="${T}" width="${bw}" height="${ph}"/>`;
- g+='</svg>'; el.innerHTML=g;
+ g+='</svg>'; el.innerHTML=g+exLegend(tex);
  const xh=el.querySelector('#xh');
  el.querySelectorAll('.hit').forEach(r=>{ const i=+r.dataset.i;
   const on=e=>{ xh.setAttribute('x1',x(i)); xh.setAttribute('x2',x(i)); xh.setAttribute('visibility','visible');
@@ -413,14 +422,15 @@ function hbars(el,rows,o){
  let g=svgEl(W,H);
  sc.t.forEach(t=>{g+=`<line class="grid" x1="${xs(t)}" x2="${xs(t)}" y1="${T}" y2="${H-18}"/><text class="svgt" x="${xs(t)}" y="${H-4}" text-anchor="middle">${esc(o.ax(t,sc.t[1]-sc.t[0]))}</text>`;});
  if(o.band) g+=`<rect class="bandr" x="${xs(o.band.lo)}" width="${Math.max(1,xs(o.band.hi)-xs(o.band.lo))}" y="${T}" height="${H-18-T}"/>`;
+ const hex=extremes(rows.map(r=>r.value)); const bc=i=>barCls(hex,i,o.cls||'bar1');
  rows.forEach((r,i)=>{ const yc=T+i*rh+rh/2, bh=Math.min(16,rh-10); const lab=r.label.length>32?r.label.slice(0,31)+'…':r.label;
   g+=`<g class="rowg" data-i="${i}"><rect class="hitbar" x="0" y="${T+i*rh}" width="${W}" height="${rh}"/>`;
   g+=`<text class="svgl" x="${LW-10}" y="${yc+4}" text-anchor="end">${esc(lab)}</text>`;
   if(r.value!=null&&!isNaN(r.value)){ const a=xs(r.value); const xL=Math.min(a,x0), w=Math.max(1,Math.abs(a-x0)); const rr=Math.min(4,w/2);
-   g+= r.value>=0?`<path class="${o.cls||'bar1'}" d="M${xL},${yc-bh/2} H${xL+w-rr} Q${xL+w},${yc-bh/2} ${xL+w},${yc-bh/2+rr} V${yc+bh/2-rr} Q${xL+w},${yc+bh/2} ${xL+w-rr},${yc+bh/2} H${xL} Z"/>`:`<path class="${o.cls||'bar1'}" d="M${x0},${yc-bh/2} H${xL+rr} Q${xL},${yc-bh/2} ${xL},${yc-bh/2+rr} V${yc+bh/2-rr} Q${xL},${yc+bh/2} ${xL+rr},${yc+bh/2} H${x0} Z"/>`; }
+   g+= r.value>=0?`<path class="${bc(i)}" d="M${xL},${yc-bh/2} H${xL+w-rr} Q${xL+w},${yc-bh/2} ${xL+w},${yc-bh/2+rr} V${yc+bh/2-rr} Q${xL+w},${yc+bh/2} ${xL+w-rr},${yc+bh/2} H${xL} Z"/>`:`<path class="${bc(i)}" d="M${x0},${yc-bh/2} H${xL+rr} Q${xL},${yc-bh/2} ${xL},${yc-bh/2+rr} V${yc+bh/2-rr} Q${xL},${yc+bh/2} ${xL+rr},${yc+bh/2} H${x0} Z"/>`; }
   if(r.target!=null) g+=`<line class="tick" x1="${xs(r.target)}" x2="${xs(r.target)}" y1="${yc-bh/2-3}" y2="${yc+bh/2+3}"/>`;
   g+=`<text class="svgv" x="${W-VW+4}" y="${yc+4}">${esc(r.value==null||isNaN(r.value)?'n/a':o.fmt(r.value))}${r.note?`<tspan class="svgt" dx="8">${esc(r.note)}</tspan>`:''}</text></g>`; });
- g+=`<line class="base" x1="${x0}" x2="${x0}" y1="${T}" y2="${H-18}"/></svg>`; el.innerHTML=g;
+ g+=`<line class="base" x1="${x0}" x2="${x0}" y1="${T}" y2="${H-18}"/></svg>`; el.innerHTML=g+exLegend(hex);
  el.querySelectorAll('.rowg').forEach(gr=>{ const r=rows[+gr.dataset.i];
   gr.addEventListener('pointerenter',e=>showTip(e,t=>{tipTitle(t,r.label); tipRow(t,o.vname||'Value',r.value==null?'n/a':o.fmt(r.value),cssv('--s1')); if(r.target!=null) tipRow(t,'Target',o.fmt(r.target),cssv('--fg')); if(r.tip) r.tip(t);}));
   gr.addEventListener('pointermove',moveTip); gr.addEventListener('pointerleave',hideTip); });
@@ -539,15 +549,15 @@ function renderDetail(main){
  let series=[], o={labels:labs,full,fmt:ms.fmt,ax:ms.ax,band:b};
  if(ms.id==='rev'){ series=[{name:'Revenue',vals,kind:'bar',cls:'bar1',color:'--s1'},{name:'Same month last year',vals:ms13.map(m=>S.rev[m-12]),cls:'lnly',color:'--ly'}];
   if(S.hasTarget) series.push({name:'Target',vals:ms13.map(m=>S.target[m]),cls:'lntg',color:'--fg-2',dash:true});
-  lg('sw-bar','Revenue','var(--s1)'); lg('sw-line','Same month last year','var(--ly)'); if(S.hasTarget) lg('sw-dash','Target','var(--fg-2)'); }
- else if(ms.id==='growth'){ series=[{name:'vs same month last year',vals,cls:'ln1',color:'--s1',endDot},{name:'vs previous month',vals:ms13.map(m=>div(S.rev[m],S.rev[m-1])-1),cls:'ln2',color:'--s2'}]; o.ref=0;
-  lg('sw-line','vs same month last year','var(--s1)'); lg('sw-line','vs previous month','var(--s2)'); }
+  lg('sw-bar','Revenue','var(--bar-mut)'); lg('sw-line','Same month last year','var(--ly)'); if(S.hasTarget) lg('sw-dash','Target','var(--fg-2)'); }
+ else if(ms.id==='growth'){ series=[{name:'Last 3 months vs a year earlier',vals,cls:'ln1',color:'--s1',endDot},{name:'Single month vs a year earlier',vals:ms13.map(m=>div(S.rev[m],S.rev[m-12])-1),cls:'ln2',color:'--s2'}]; o.ref=0;
+  lg('sw-line','Last 3 months vs a year earlier','var(--s1)'); lg('sw-line','Single month vs a year earlier','var(--s2)'); }
  else if(ms.id==='fc'){ series=[{name:'Actual revenue',vals:ms13.map(m=>S.rev[m]),cls:'ln1',color:'--s1'},{name:'Forecast',vals:ms13.map(m=>S.hasTarget?S.fc[m]:null),cls:'ln2',color:'--s2'}]; o.band=null; o.fmt=F.usd; o.ax=F.usdAx;
   lg('sw-line','Actual revenue','var(--s1)'); lg('sw-line','Forecast','var(--s2)'); }
  else if(ms.id==='aging'){ series=[{name:'Aging open quotes',vals,kind:'bar',cls:'bar1',color:'--s1'},{name:'Lost quotes',vals:ms13.map(m=>S.lostVal[m]),cls:'ln2',color:'--s2'}];
   o.extra=(t,i)=>{tipRow(t,'Aging count',F.int(S.agingCnt[ms13[i]]));tipRow(t,'Lost count',F.int(S.lostCnt[ms13[i]]));};
-  lg('sw-bar','Aging open quotes, value','var(--s1)'); lg('sw-line','Lost quotes, value','var(--s2)'); }
- else if(ms.id==='lapsed'){ series=[{name:'Lapsed customers',vals,kind:'bar',cls:'bar1',color:'--s1'}]; o.ax=F.daysAx; lg('sw-bar','Lapsed customers','var(--s1)'); }
+  lg('sw-bar','Aging open quotes, value','var(--bar-mut)'); lg('sw-line','Lost quotes, value','var(--s2)'); }
+ else if(ms.id==='lapsed'){ series=[{name:'Lapsed customers',vals,kind:'bar',cls:'bar1',color:'--s1'}]; o.ax=F.daysAx; lg('sw-bar','Lapsed customers','var(--bar-mut)'); }
  else { series=[{name:ms.name,vals,cls:'ln1',color:'--s1',endDot}]; lg('sw-line',ms.name,'var(--s1)'); }
  if(o.band) lg('sw-band','Normal range');
  o.series=series; $('lg1').innerHTML=L.join('');
@@ -564,7 +574,7 @@ function renderDetail(main){
   note: ms.id==='q2o'?F.int(Sx.recv[s])+'/'+F.int(Sx.issued[s]): ms.id==='ret'?F.int(Sx.returned[s])+'/'+F.int(Sx.orders[s]): ms.id==='aging'?F.int(Sx.agingCnt[s])+' quotes':'' }; });
  rows.sort((a,b)=>(b.value??-1e18)-(a.value??-1e18));
  draws.push(()=>hbars($('c3'),rows,{fmt:ms.fmt,ax:ms.id==='lapsed'?F.daysAx:ms.ax,vname:ms.name,rh:st.dim==='cust'?26:32}));
- if(ms.id==='rev') $('c3').insertAdjacentHTML('afterend',`<div class="legend"><span><span class="sw-bar" style="background:var(--s1)"></span>Revenue</span><span><span class="sw-line" style="border-top-color:var(--fg);width:3px;height:12px;border-top:0;border-left:2px solid var(--fg)"></span>Target</span></div>`);
+ if(ms.id==='rev') $('c3').insertAdjacentHTML('afterend',`<div class="legend"><span><span class="sw-bar" style="background:var(--bar-mut)"></span>Revenue</span><span><span class="sw-line" style="border-top-color:var(--fg);width:3px;height:12px;border-top:0;border-left:2px solid var(--fg)"></span>Target</span></div>`);
  // records
  const R=records(ms,f,s); $('recs').innerHTML=`<h3>${esc(R.title)}</h3><p class="sub">${R.sortNote?esc(R.sortNote)+'. ':''}The list follows the filters above.</p>`+tableHTML(R);
  // action
@@ -589,7 +599,7 @@ function renderWhy(main){
  <div class="panel"><h3>Cause of delay for aging open quotes</h3><p class="sub">Share of the days that open quotes past their validity date had been waiting at the end of ${esc(monthLong(s))}. Customer delays sit apart from delays inside the company.</p><div class="chart" id="w4"></div></div>`);
  $('pm').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{st.pmode=b.dataset.p;render();}));
  const par=(o)=>{const k=st.pmode; const rows=Object.entries(o).map(([l,x])=>({label:l,value:x[k],n:x.n,v:x.v})).sort((a,b)=>b.value-a.value); const tot=rows.reduce((a,b)=>a+b.value,0); let c=0;
-  rows.forEach(r=>{c+=r.value; r.note='cum. '+Math.round(c/tot*100)+'%'; r.tip=t=>{tipRow(t,'Quotes',F.int(r.n));tipRow(t,'Value',F.usd(r.v));tipRow(t,'Cumulative share',Math.round(c/tot*100)+'%');};}); return rows;};
+  rows.forEach(r=>{c+=r.value; const cum=Math.round(c/tot*100); r.note='cum. '+cum+'%'; r.tip=t=>{tipRow(t,'Quotes',F.int(r.n));tipRow(t,'Value',F.usd(r.v));tipRow(t,'Cumulative share',cum+'%');};}); return rows;};
  const fmtP=st.pmode==='n'?F.int:F.usd, axP=st.pmode==='n'?F.daysAx:F.usdAx;
  const draws=[()=>trend($('w1'),{labels:ms13.map(m=>monthLabel(m,1)),full:ms13.map(m=>monthLong(m)),fmt:F.pct,ax:F.pctAx,h:220,series:[{name:'Monthly',vals:csat,cls:'ln1',color:'--s1',endDot:'dot1'},{name:'Quarter to date average',vals:qavg,cls:'ln2',color:'--s2'}],
    extra:(t,i)=>tipRow(t,'Survey responses',F.int(S.csR[ms13[i]]))}),
